@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Resourses/Images/Tabs/Category_Tabs_PlayerStats.png</file>
+        <file>Resourses/Images/Tabs/Category_Tabs_PlayerStats_Highlighted.png</file>
+        <file>Resourses/Images/Tabs/CategoryTab_Equipment.png</file>
+        <file>Resourses/Images/Tabs/CategoryTab_Equipment_Highlighted.png</file>
+        <file>Resourses/Images/Tabs/CategoryTab_Help.png</file>
+        <file>Resourses/Images/Tabs/CategoryTab_Help_Highlighted.png</file>
+        <file>Resourses/Images/Tabs/CategoryTab_Inventory.png</file>
+        <file>Resourses/Images/Tabs/CategoryTab_Inventory_Highlighted.png</file>
+        <file>Resourses/Images/Tabs/CategoryTab_Settings.png</file>
+        <file>Resourses/Images/Tabs/CategoryTab_Settings_Highlighted.png</file>
+        <file>Resourses/Images/Misc/icon.ico</file>
+        <file>Resourses/Fonts/PressStart2P-Regular.ttf</file>
+        <file>Resourses/Fonts/Muli-Regular.ttf</file>
+        <file>Resourses/Fonts/prstart.ttf</file>
+        <file>Resourses/Fonts/prstartk.ttf</file>
+        <file>Resourses/Fonts/Retro Gaming.ttf</file>
+        <file>Resourses/StyleSheet.qss</file>
+    </qresource>
+</RCC>
