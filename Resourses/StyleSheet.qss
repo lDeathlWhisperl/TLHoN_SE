@@ -1,23 +1,35 @@
-QWidget#centralwidget
-{
-	background-color: rgb(18, 15, 24);
-}
+QMainWindow { background-color: rgb(18, 15, 24); }
 
 QLabel
 {
-	font: 11px 'Press Start 2P';
-	color: #fff;
+    font: 11px 'Press Start 2P';
+    color: #fff;
 }
 
-QTabWidget { border: none; }
-QTabWidget::pane { border: 5px dotted #fff; }
+QTabWidget QPushButton
+{
+    border: 5px solid #fff;
+    border-radius: 7px;
+}
+
+QTabWidget::pane { border: 5px dashed #fff; }
+
+QWidget#Equipment 
+{
+    background: url(:/Resourses/Images/Misc/TinyPixelMan.png) no-repeat  center;
+}
+
+QTabWidget QLabel#l_armor
+{
+    font-size: 16pt;
+}
 
 QPushButton#btn_equipment
 {
-                background-image: url(:/Resourses/Images/Tabs/CategoryTab_Equipment.png);
-                background-repeat: no-repeat;
-                background-position: center;
-                border: none;
+    background-image: url(:/Resourses/Images/Tabs/CategoryTab_Equipment.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
 }
 
 QPushButton#btn_equipment::hover   { background-image: url(:/Resourses/Images/Tabs/CategoryTab_Equipment_Highlighted.png); }
@@ -25,10 +37,10 @@ QPushButton#btn_equipment::checked { background-image: url(:/Resourses/Images/Ta
 
 QPushButton#btn_inventory
 {
-                background-image: url(:/Resourses/Images/Tabs/CategoryTab_Inventory.png);
-                background-repeat: no-repeat;
-                background-position: center;
-                border: none;
+    background-image: url(:/Resourses/Images/Tabs/CategoryTab_Inventory.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
 }
 
 QPushButton#btn_inventory::hover   { background-image: url(:/Resourses/Images/Tabs/CategoryTab_Inventory_Highlighted.png); }
@@ -36,10 +48,10 @@ QPushButton#btn_inventory::checked { background-image: url(:/Resourses/Images/Ta
 
 QPushButton#btn_stats
 {
-                background-image: url(:/Resourses/Images/Tabs/Category_Tabs_PlayerStats.png);
-                background-repeat: no-repeat;
-                background-position: center;
-                border: none;
+    background-image: url(:/Resourses/Images/Tabs/Category_Tabs_PlayerStats.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
 }
 
 QPushButton#btn_stats::hover   { background-image: url(:/Resourses/Images/Tabs/Category_Tabs_PlayerStats_Highlighted.png); }
@@ -47,10 +59,10 @@ QPushButton#btn_stats::checked { background-image: url(:/Resourses/Images/Tabs/C
 
 QPushButton#btn_settings
 {
-                background-image: url(:/Resourses/Images/Tabs/CategoryTab_Settings.png);
-                background-repeat: no-repeat;
-                background-position: center;
-                border: none;
+    background-image: url(:/Resourses/Images/Tabs/CategoryTab_Settings.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
 }
 
 QPushButton#btn_settings::hover   { background-image: url(:/Resourses/Images/Tabs/CategoryTab_Settings_Highlighted.png); }
@@ -58,10 +70,10 @@ QPushButton#btn_settings::checked { background-image: url(:/Resourses/Images/Tab
 
 QPushButton#btn_help
 {
-                background-image: url(:/Resourses/Images/Tabs/CategoryTab_Help.png);
-                background-repeat: no-repeat;
-                background-position: center;
-                border: none;
+    background-image: url(:/Resourses/Images/Tabs/CategoryTab_Help.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
 }
 
 QPushButton#btn_help::hover   { background-image: url(:/Resourses/Images/Tabs/CategoryTab_Help_Highlighted.png); }

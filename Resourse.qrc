@@ -17,5 +17,14 @@
         <file>Resourses/Fonts/prstartk.ttf</file>
         <file>Resourses/Fonts/Retro Gaming.ttf</file>
         <file>Resourses/StyleSheet.qss</file>
+        <file>Resourses/Images/Misc/TinyPixelMan.png</file>
+        <file>Resourses/Images/Icons/BlankIcon_Arms_HF_Small.png</file>
+        <file>Resourses/Images/Icons/BlankIcon_Helm_HF_Small.png</file>
+        <file>Resourses/Images/Icons/BlankIcon_LeftHand_HF_Small.png</file>
+        <file>Resourses/Images/Icons/BlankIcon_RightHand_HF_Small.png</file>
+        <file>Resourses/Images/Icons/BlankIcon_Torso_HF_Small.png</file>
+        <file>Resourses/Images/Icons/BlankIcon_Consumables_HF_Small.png</file>
+        <file>Resourses/Images/Icons/BlankIcon_Legs_HF_Small.png</file>
+        <file>Resourses/Images/Icons/BlankIcon_Rings_HF_Small.png</file>
     </qresource>
 </RCC>

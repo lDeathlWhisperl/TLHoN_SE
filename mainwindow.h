@@ -20,8 +20,8 @@ public:
 private slots:
     void onTabButtonClicked(class QPushButton *button, class QLabel* label, int tabIndex);
 
-private:
-    void setStyle();
+protected:
+    void paintEvent(QPaintEvent * event);
 
 private:
     Ui::MainWindow *ui;

@@ -7,12 +7,13 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
+    w.setStyleSheet("");
 
-    QFile file(":/Resourses/StyleSheet.qss"); // Укажите путь к вашему QSS файлу
+    QFile file(":/Resourses/StyleSheet.qss");
     if (file.open(QFile::ReadOnly | QFile::Text))
     {
         QTextStream ts(&file);
-        w.setStyleSheet(ts.readAll()); // Применяем стили к приложению
+        w.setStyleSheet(ts.readAll());
         file.close();
     }
     else qWarning("Unable to open stylesheet file.");
