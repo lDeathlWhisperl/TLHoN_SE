@@ -1,0 +1,29 @@
+QLabel#label_6, 
+QLabel#label_15, 
+QLabel#label_16, 
+QLabel#label_17, 
+QLabel#l_class, 
+QLabel#l_health, 
+QLabel#l_level, 
+QLabel#l_stamina, 
+QLabel#label_22, 
+QLabel#label_23,
+QLabel#label_41,
+QLabel#l_memory,
+QLabel#l_required
+{
+	font-size: 12pt;
+}
+
+QLabel#l_nickname,
+QLabel#label_26
+{
+	font-size: 16pt;
+}
+QLabel#label_22,
+QLabel#label_23,
+QLabel#l_memory,
+QLabel#l_required
+{
+	color: rgb(240, 255, 140);
+}

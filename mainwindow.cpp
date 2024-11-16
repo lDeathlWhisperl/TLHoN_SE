@@ -6,6 +6,18 @@
 #include <QPainter>
 #include <QStyleOption>
 
+void setStyleFromFile(QWidget *w, QString res)
+{
+    QFile file(res);
+    if (file.open(QFile::ReadOnly | QFile::Text))
+    {
+        QTextStream ts(&file);
+        w->setStyleSheet(ts.readAll());
+        file.close();
+    }
+    else qWarning("Unable to open stylesheet file.");
+}
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -36,6 +48,10 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->btn_stats,     &QPushButton::toggled, [this]() { onTabButtonClicked(ui->btn_stats,     ui->l_stats,     2); });
     connect(ui->btn_settings,  &QPushButton::toggled, [this]() { onTabButtonClicked(ui->btn_settings,  ui->l_settings,  3); });
     connect(ui->btn_help,      &QPushButton::toggled, [this]() { onTabButtonClicked(ui->btn_help,      ui->l_help,      4); });
+
+    //
+    setStyleFromFile(ui->Equipment, ":/Resourses/StyleSheets/Tab_Equipment.qss");
+    setStyleFromFile(ui->Stats, ":/Resourses/StyleSheets/Tab_Stats.qss");
 }
 
 void MainWindow::onTabButtonClicked(QPushButton *button, QLabel *label, int tabIndex)
@@ -71,3 +87,4 @@ MainWindow::~MainWindow()
     delete checked_btn;
     delete checked_label;
 }
+

@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QFile>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -28,4 +30,6 @@ private:
     class QPushButton *checked_btn;
     class QLabel *checked_label;
 };
+
+void setStyleFromFile(QWidget* w, QString res);
 #endif // MAINWINDOW_H

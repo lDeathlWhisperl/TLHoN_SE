@@ -14,16 +14,6 @@ QTabWidget QPushButton
 
 QTabWidget::pane { border: 5px dashed #fff; }
 
-QWidget#Equipment 
-{
-    background: url(:/Resourses/Images/Misc/TinyPixelMan.png) no-repeat  center;
-}
-
-QTabWidget QLabel#l_armor
-{
-    font-size: 16pt;
-}
-
 QPushButton#btn_equipment
 {
     background-image: url(:/Resourses/Images/Tabs/CategoryTab_Equipment.png);
