@@ -1,22 +1,11 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
+#include "tab_equipment.h"
+#include "tab_stats.h"
+
 #include <QTabBar>
 #include <QFontDatabase>
-#include <QPainter>
-#include <QStyleOption>
-
-void setStyleFromFile(QWidget *w, QString res)
-{
-    QFile file(res);
-    if (file.open(QFile::ReadOnly | QFile::Text))
-    {
-        QTextStream ts(&file);
-        w->setStyleSheet(ts.readAll());
-        file.close();
-    }
-    else qWarning("Unable to open stylesheet file.");
-}
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -26,6 +15,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tabWidget->tabBar()->hide();
     ui->tabWidget->setCurrentIndex(0);
     QFontDatabase::addApplicationFont(":/Resourses/Fonts/PressStart2P-Regular.ttf");
+
+    tab_equipment = new Tab_Equipment(ui->Equipment);
+    tab_stats = new Tab_Stats(ui->Stats);
 
     ui->btn_equipment->setCheckable(true);
     ui->btn_inventory->setCheckable(true);
@@ -49,9 +41,11 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->btn_settings,  &QPushButton::toggled, [this]() { onTabButtonClicked(ui->btn_settings,  ui->l_settings,  3); });
     connect(ui->btn_help,      &QPushButton::toggled, [this]() { onTabButtonClicked(ui->btn_help,      ui->l_help,      4); });
 
-    //
-    setStyleFromFile(ui->Equipment, ":/Resourses/StyleSheets/Tab_Equipment.qss");
-    setStyleFromFile(ui->Stats, ":/Resourses/StyleSheets/Tab_Stats.qss");
+    ui->vl_equipment_layout->addWidget(tab_equipment);
+    ui->vl_stats_layout->addWidget(tab_stats);
+
+    tab_equipment->show();
+    tab_stats->show();
 }
 
 void MainWindow::onTabButtonClicked(QPushButton *button, QLabel *label, int tabIndex)
@@ -66,19 +60,10 @@ void MainWindow::onTabButtonClicked(QPushButton *button, QLabel *label, int tabI
     checked_label->setVisible(false);
 
     label->setVisible(true);
-    checked_btn = button;
+    checked_btn  = button;
     checked_label = label;
 
     ui->tabWidget->setCurrentIndex(tabIndex);
-}
-
-void MainWindow::paintEvent(QPaintEvent *event)
-{
-    QStyleOption opt;
-    opt.initFrom(this);
-    QPainter p(this);
-    style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
-    QWidget::paintEvent(event);
 }
 
 MainWindow::~MainWindow()
@@ -86,5 +71,8 @@ MainWindow::~MainWindow()
     delete ui;
     delete checked_btn;
     delete checked_label;
+
+    delete tab_equipment;
+    delete tab_stats;
 }
 

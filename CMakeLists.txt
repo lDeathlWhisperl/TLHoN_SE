@@ -24,9 +24,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         resourse.qrc
-
-
-
+        stylefromfile.cpp stylefromfile.h tab_stats.cpp tab_stats.h tab_stats.ui
+        tab_equipment.h tab_equipment.cpp tab_equipment.ui
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET TLHoN_IC APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

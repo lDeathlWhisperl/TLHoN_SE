@@ -2,8 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QFile>
-
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -22,14 +20,13 @@ public:
 private slots:
     void onTabButtonClicked(class QPushButton *button, class QLabel* label, int tabIndex);
 
-protected:
-    void paintEvent(QPaintEvent * event);
-
 private:
     Ui::MainWindow *ui;
     class QPushButton *checked_btn;
     class QLabel *checked_label;
+
+    class Tab_Equipment *tab_equipment;
+    class Tab_Stats *tab_stats;
 };
 
-void setStyleFromFile(QWidget* w, QString res);
 #endif // MAINWINDOW_H

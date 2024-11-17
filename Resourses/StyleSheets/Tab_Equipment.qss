@@ -1,13 +1,15 @@
-QWidget#Equipment 
+QPushButton
 {
-    background: url(:/Resourses/Images/Misc/TinyPixelMan.png) no-repeat  center;
+    border: 5px solid #fff;
+    border-radius: 7px;
+	background: url(:/Resourses/Images/Icons/BlankIcon_Consumables_HF_Small.png), center;
 }
 QPushButton::hover
 {
 	border: 5px solid rgb(240, 255, 140);
     border-radius: 7px;
 }
-QTabWidget QLabel#l_armor
+QLabel#l_armor
 {
     font-size: 16pt;
 }
@@ -44,10 +46,6 @@ QPushButton#btn_arms
 QPushButton#btn_legs
 {
 	background: url(:/Resourses/Images/Icons/BlankIcon_Legs_HF_Small.png);
-}
-QPushButton
-{
-	background: url(:/Resourses/Images/Icons/BlankIcon_Consumables_HF_Small.png), center;
 }
 QPushButton#btn_rings_1
 {

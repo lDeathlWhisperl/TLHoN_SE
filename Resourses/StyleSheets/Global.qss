@@ -1,4 +1,4 @@
-QMainWindow { background-color: rgb(18, 15, 24); }
+QMainWindow#MainWindow { background-color: rgb(18, 15, 24); }
 
 QLabel
 {
@@ -6,13 +6,12 @@ QLabel
     color: #fff;
 }
 
-QTabWidget QPushButton
-{
-    border: 5px solid #fff;
-    border-radius: 7px;
-}
-
 QTabWidget::pane { border: 5px dashed #fff; }
+
+QWidget#Equipment
+{
+    background: url(:/Resourses/Images/Misc/TinyPixelMan.png) no-repeat  center;
+}
 
 QPushButton#btn_equipment
 {

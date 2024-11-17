@@ -1,12 +1,12 @@
 #include "mainwindow.h"
 
 #include <QApplication>
+#include "stylefromfile.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
-    w.setStyleSheet("");
 
     setStyleFromFile(&w, ":/Resourses/StyleSheets/Global.qss");
 
