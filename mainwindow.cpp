@@ -3,6 +3,7 @@
 
 #include "tab_equipment.h"
 #include "tab_stats.h"
+#include "tab_settings.h"
 
 #include <QTabBar>
 #include <QFontDatabase>
@@ -16,8 +17,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tabWidget->setCurrentIndex(0);
     QFontDatabase::addApplicationFont(":/Resourses/Fonts/PressStart2P-Regular.ttf");
 
+
     tab_equipment = new Tab_Equipment(ui->Equipment);
     tab_stats = new Tab_Stats(ui->Stats);
+    tab_settings = new Tab_Settings(ui->Settings);
+
+    tab_stats->initSetting(tab_settings);
 
     ui->btn_equipment->setCheckable(true);
     ui->btn_inventory->setCheckable(true);
@@ -43,9 +48,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->vl_equipment_layout->addWidget(tab_equipment);
     ui->vl_stats_layout->addWidget(tab_stats);
+    ui->vl_settings_layout->addWidget(tab_settings);
 
     tab_equipment->show();
     tab_stats->show();
+    tab_settings->show();
 }
 
 void MainWindow::onTabButtonClicked(QPushButton *button, QLabel *label, int tabIndex)
@@ -74,5 +81,6 @@ MainWindow::~MainWindow()
 
     delete tab_equipment;
     delete tab_stats;
+    delete tab_settings;
 }
 

@@ -27,6 +27,7 @@ private:
 
     class Tab_Equipment *tab_equipment;
     class Tab_Stats *tab_stats;
+    class Tab_Settings *tab_settings;
 };
 
 #endif // MAINWINDOW_H

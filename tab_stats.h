@@ -11,9 +11,14 @@ class Tab_Stats : public QWidget
 {
     Q_OBJECT
 
+    int id = 0;
 public:
     explicit Tab_Stats(QWidget *parent = nullptr);
+    void initSetting(class Tab_Settings* s);
     ~Tab_Stats();
+
+private slots:
+    void update();
 
 private:
     Ui::Tab_stats *ui;

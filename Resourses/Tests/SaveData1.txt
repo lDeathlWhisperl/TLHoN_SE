@@ -1,0 +1,533 @@
+{
+    "previousSaveindex": 0,
+    "automaticallySelectNextTarget": true,
+    "freezeTimeOnHit": true,
+    "closeMenuWhenAttacked": true,
+    "controllerVibration": 0.20000001788139344,
+    "invertCameraX": false,
+    "invertCameraY": false,
+    "lockCameraRotation": false,
+    "cameraSmoothing": 1.0,
+    "screenShake": true,
+    "cameraSpeed": 0.5,
+    "useCustomCameraPitch": false,
+    "customCameraPitchSpeed": 0.5,
+    "offlineMode": false,
+    "hideMessages": false,
+    "subtitles": false,
+    "dialogueAutoProgress": true,
+    "volume_Music": 0.200080007314682,
+    "volume_SFX": 0.200080007314682,
+    "volume_Voice": 0.200080007314682,
+    "lightShadowQuality": 1,
+    "lightShadowDistance": 60.0,
+    "isWindowed": false,
+    "resolution": [
+        1366,
+        768
+    ],
+    "refreshRate": 60,
+    "brightness": 0.0,
+    "antiAliasing": true,
+    "volumeLighting": true,
+    "shadowQuality": 1,
+    "vsync": false,
+    "vsyncCount": 1,
+    "lowQualityMode": false,
+    "mouse_Sensitivity": 0.5,
+    "mouse_InvertX": false,
+    "mouse_InvertY": false,
+    "toggleSprint": false,
+    "holdRollToSprint": true,
+    "currentLanguage": 8
+}~SettingsSplit~{
+    "DLCItemsRemembered": 0,
+    "_region": "HallOfHeroes",
+    "_stat_attunement": 1,
+    "_stat_dexterity": 9,
+    "_stat_equipLoad": 12,
+    "_stat_luck": 4,
+    "_stat_stamina": 11,
+    "_stat_strength": 9,
+    "_stat_vitality": 14,
+    "accomplishments": [
+        0
+    ],
+    "achievements": [
+    ],
+    "backstabCount": 0,
+    "beaconIDToLoadAt": "START",
+    "canAccrueSins": false,
+    "canAttackSpirit": false,
+    "deaths": 0,
+    "discoveredRegions": [
+    ],
+    "droppedSpecialItems": [
+    ],
+    "easyMode": false,
+    "easyModeTutorials": [
+    ],
+    "equipedArms": "Starting_Knight_Arms_OnSpawn",
+    "equipedConsumables": [
+        "StartHeroIconGUID",
+        "NULL",
+        "NULL",
+        "NULL",
+        "NULL"
+    ],
+    "equipedHelm": "Starting_Knight_Helm_OnSpawn",
+    "equipedLegs": "Starting_Knight_Legs_OnSpawn",
+    "equipedRings": [
+        "NULL",
+        "NULL"
+    ],
+    "equipedTorso": "Starting_Knight_Torso_OnSpawn",
+    "expToNextLevel": 300,
+    "guid": "ec80a86f-492e-401b-922f-e7e50f30ea63",
+    "hasBeenBit": false,
+    "hasCTH": false,
+    "hasDepthHand": false,
+    "hasDoneInitialAcheivementFixCheck": true,
+    "hasGoFlat": false,
+    "hasHeardWunderBark": false,
+    "hasHooveredFirstItem": false,
+    "hasSeenFlatCounterTutorial": false,
+    "hasSeenHooverTutorial": false,
+    "hasSeenMartyrTutorial": false,
+    "health": 697,
+    "herosSpiritInWell": false,
+    "hooverCanHoover": false,
+    "hooverCanLevelUp": false,
+    "hooverDead": false,
+    "hooverInWell": false,
+    "hooverSins": 0,
+    "hooveredGUIDs": [
+    ],
+    "initLeftHandGUID": "AvatarBaseShield",
+    "initRightHandGUID": "AvatarBaseSword",
+    "innocentSacrificed": false,
+    "inventory": [
+        {
+            "GUID": "HealthPotion",
+            "hasSeen": true,
+            "instanceIDOnCreation": "StartHeroIconGUID",
+            "isAwake": false,
+            "isHoovered": false,
+            "newGamePlusCount": 0,
+            "uses": 3
+        },
+        {
+            "GUID": "GenericAmmo",
+            "hasSeen": true,
+            "instanceIDOnCreation": "68e04907-98f9-4023-b20b-dd2f19d39778",
+            "isAwake": false,
+            "isHoovered": false,
+            "newGamePlusCount": 0,
+            "uses": 10
+        },
+        {
+            "GUID": "SummonSign_MergeWorlds",
+            "hasSeen": true,
+            "instanceIDOnCreation": "06b83de9-90f2-4a3d-87eb-cd3e8315a809",
+            "isAwake": false,
+            "isHoovered": false,
+            "newGamePlusCount": 0,
+            "uses": -1
+        },
+        {
+            "GUID": "Starting_Knight_Helm",
+            "hasSeen": true,
+            "instanceIDOnCreation": "Starting_Knight_Helm_OnSpawn",
+            "isAwake": false,
+            "isHoovered": false,
+            "newGamePlusCount": 0,
+            "uses": -1
+        },
+        {
+            "GUID": "Starting_Knight_Torso",
+            "hasSeen": true,
+            "instanceIDOnCreation": "Starting_Knight_Torso_OnSpawn",
+            "isAwake": false,
+            "isHoovered": false,
+            "newGamePlusCount": 0,
+            "uses": -1
+        },
+        {
+            "GUID": "Starting_Knight_Arms",
+            "hasSeen": true,
+            "instanceIDOnCreation": "Starting_Knight_Arms_OnSpawn",
+            "isAwake": false,
+            "isHoovered": false,
+            "newGamePlusCount": 0,
+            "uses": -1
+        },
+        {
+            "GUID": "Starting_Knight_Legs",
+            "hasSeen": true,
+            "instanceIDOnCreation": "Starting_Knight_Legs_OnSpawn",
+            "isAwake": false,
+            "isHoovered": false,
+            "newGamePlusCount": 0,
+            "uses": -1
+        }
+    ],
+    "inventoryWeapons": [
+        {
+            "GUID": "AvatarBaseSword",
+            "hasSeen": true,
+            "infusionType": 0,
+            "instanceIDOnCreation": "aa23b5d9-f9ca-46fa-ad37-c97b45aa8b8a",
+            "isAwake": false,
+            "isHoovered": false,
+            "level": 0,
+            "newGamePlusCount": 0
+        },
+        {
+            "GUID": "AvatarBaseShield",
+            "hasSeen": true,
+            "infusionType": 0,
+            "instanceIDOnCreation": "e97f0458-3f45-48fa-a353-415c18ae2599",
+            "isAwake": false,
+            "isHoovered": false,
+            "level": 0,
+            "newGamePlusCount": 0
+        }
+    ],
+    "itemsHoovered": 0,
+    "itemsRemembered": 0,
+    "leftHandEquipIndex": 0,
+    "level": 1,
+    "levelsUpToHoover": 0,
+    "loadedRegions": [
+        {
+            "lodIndex": 0,
+            "name": "HallOfHeroes",
+            "usingLOD": false
+        }
+    ],
+    "maxIconUses": 3,
+    "memory": 0,
+    "name": "123",
+    "newGamePlusCount": 0,
+    "numberOfDeaths": 0,
+    "playerClass": 0,
+    "plotThreadsCut": false,
+    "position": {
+        "x": -196.0358428955078,
+        "y": -9.664999008178711,
+        "z": -152.37855529785156
+    },
+    "rebuffCount": 0,
+    "regionDisplayName": "",
+    "regionName": "HallOfHeroes",
+    "regionsIWantToLoad": 0,
+    "rememberedGUIDs": [
+    ],
+    "reposteCount": 0,
+    "rightHandEquipIndex": 0,
+    "rotation": {
+        "w": 0.9566141963005066,
+        "x": 0,
+        "y": -0.2913576662540436,
+        "z": 0
+    },
+    "savedAtDeath": false,
+    "selectedConsumableIndex": 0,
+    "slottedLeftHands": [
+        "e97f0458-3f45-48fa-a353-415c18ae2599",
+        "Base_Punch"
+    ],
+    "slottedRightHands": [
+        "aa23b5d9-f9ca-46fa-ad37-c97b45aa8b8a",
+        "Base_Punch"
+    ],
+    "storage": [
+    ],
+    "tetheredBeaconID": "",
+    "totalMemorySinceStart": 0,
+    "truthFidelity": 5,
+    "truthPixelation": 5,
+    "wakeUpTutorialStage": 0
+}
+;{
+    "isCorpseOnField": false,
+    "savedMemoryOnDeath": false,
+    "corpseLocation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "corpseMemroy": 0,
+    "usingVerboseItemDetail": false,
+    "hooverBonusDisplay": false,
+    "forgesLit": 0,
+    "ambientEventName": "AMB_EOT_Inside",
+    "litBeacons": [],
+    "activeFidelityPoint": "START",
+    "messagesRated": [],
+    "myMessages": [],
+    "collectionDropIndexes": [],
+    "openBackDoors": [],
+    "playTime": 39.590443298220638,
+    "timeAtLastSaveOrLoad": 90932934.48463139,
+    "bossFightAssistances": 0,
+    "shrineBGLerpAMount": 0.0,
+    "UpperDBGLerpAmount": 0.0,
+    "MansionBGLerpAmount": 0.0,
+    "NobleWoodBGLerpAmount": 0.0,
+    "NobleWoodBGGeoLerpAmount": 0.0,
+    "HiddenVBGLerpAmount": 0.0,
+    "MoatBGLerpAmount": 1.0,
+    "MoatBGGeoLerpAmount": 1.0,
+    "VCInteriorBGLerpAmount": 0.0,
+    "GauntletLerpAmount": 0.0,
+    "CultLerpAmount": 0.0,
+    "trailMarkers": [],
+    "customObjects": [],
+    "rehabilitationTorchesLit": 0,
+    "sewerTownTorchesLit": 0,
+    "unlockedShopkeeperExtraInventory_1": false,
+    "unlockedShopkeeperExtraInventory_2": false,
+    "unlockedShopkeeperExtraInventory_3": false,
+    "hasEndedGameAlready": false,
+    "HV_Water_Volume": 0.0,
+    "HV_Water_ControlType": 2,
+    "HV_Water_LerpIndex": 0
+};{
+    "friendlyNPCsKilled": [],
+    "storyProgressStage": 0,
+    "storyProgressStage_DLC1_Lower": 0,
+    "storyProgressStage_DLC1_Upper": 0,
+    "hooverConversationIndex": 0,
+    "hooverTalkConversationIndex": 0,
+    "scoFrickinCursedUsOut": false,
+    "blacksmithFirstLinesSpoken": [
+        false,
+        false,
+        false,
+        false,
+        false
+    ],
+    "blacksmithHasSaidEndGame": false,
+    "blacksmithGenericTalkIndex": 0,
+    "hasSpawnedBridge": false,
+    "DLC_FailedOldManQuestLine": false,
+    "DLC_OldManStartedInSewers": false,
+    "DLC_OldManSecondLocaltionInSewers": false,
+    "DLC_OldManInitialConversation": false,
+    "DLC_OldManSecondConversation": false,
+    "DLC_OldManEnteredSTown": false,
+    "DLC_OldManEnteredCave": false,
+    "DLC_OldManTalkedFirstItem": false,
+    "DLC_OldManTalkedSecondItem": false,
+    "DLC_KilledEve": false,
+    "DLC_KilledLiuvani": false,
+    "DLC_KilledLiuvaniFirst": false,
+    "DLC_KilledOldMan": false,
+    "DLC_HasFoughtOldManOnce": false,
+    "DLC_HasSeenOldmanFightIntro": false,
+    "DLC_HadFinalOldManConvo": false,
+    "DLC_OldManItemsOwned": 0,
+    "DLC_OldManHasArmour": false,
+    "DLC_LastBossAttemptDamage": 0,
+    "DLC_LastBossConvoIndex1": 0,
+    "DLC_LastBossConvoIndex2": 0,
+    "DLC_LastBossConvoIndex3": 0,
+    "DLC_LastBossConvoIndex4": 0,
+    "DLC_MadeFinalFormJoke": false,
+    "DLC_HasAttemptedLastBoss": false,
+    "DLC_HasTalkedToBlacksmithAboutArmour": false,
+    "DLC_HasTalkedToBlacksmithAfterForging": false,
+    "questStage_OldMan": 10,
+    "questStage_Heir": 10,
+    "questStage_Nameless": 10,
+    "questStage_Sco": 10,
+    "questStage_Innocent": 10,
+    "questStage_Maiden": 10,
+    "questStage_Hoover": 10,
+    "questStage_TheSmith": 10,
+    "questStage_Shopkeeper": 10,
+    "questStage_Sando": 10,
+    "questStage_ChainedHero": 10,
+    "questStage_BrendenMerkle": 10
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+};{
+    "killedEnemies": [],
+    "destructableObjects": [],
+    "customObjects": [],
+    "customBeaconResetables": [],
+    "visibilityBitMask": 1
+}

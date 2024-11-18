@@ -20,7 +20,7 @@
    <string>TLHoN_IC</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resourse.qrc">
+   <iconset>
     <normaloff>:/Resourses/Images/Misc/icon.ico</normaloff>:/Resourses/Images/Misc/icon.ico</iconset>
   </property>
   <property name="styleSheet">
@@ -310,7 +310,7 @@
        <string notr="true"/>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <property name="tabBarAutoHide">
        <bool>false</bool>
@@ -372,19 +372,11 @@
        <attribute name="title">
         <string>Settings</string>
        </attribute>
-       <widget class="QLabel" name="label_4">
-        <property name="geometry">
-         <rect>
-          <x>210</x>
-          <y>280</y>
-          <width>181</width>
-          <height>51</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Settings</string>
-        </property>
-       </widget>
+       <layout class="QVBoxLayout" name="verticalLayout_7">
+        <item>
+         <layout class="QVBoxLayout" name="vl_settings_layout"/>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="Help">
        <attribute name="title">
@@ -414,8 +406,6 @@
    </layout>
   </widget>
  </widget>
- <resources>
-  <include location="resourse.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

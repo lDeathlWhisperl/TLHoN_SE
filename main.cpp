@@ -1,10 +1,12 @@
 #include "mainwindow.h"
+#include "stylefromfile.h"
+#include "jsonparser.h"
 
 #include <QApplication>
-#include "stylefromfile.h"
 
 int main(int argc, char *argv[])
 {
+    JsonParser::init();
     QApplication a(argc, argv);
     MainWindow w;
 
