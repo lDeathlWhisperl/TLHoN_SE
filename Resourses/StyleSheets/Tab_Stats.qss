@@ -15,6 +15,27 @@ QLabel#l_required
 	font-size: 12pt;
 }
 
+QLineEdit
+{
+	background-color: rgb(18, 15, 24);
+	font: 11px 'Press Start 2P';
+    color: #fff;
+	border: none;
+}
+QLineEdit::hover
+{
+	color: rgb(240, 255, 140);
+}
+QLineEdit#le_memory
+{
+	font-size: 12pt;
+	color: rgb(240, 255, 140);
+}
+QLineEdit#le_memory::hover
+{
+    color: #fff;
+}
+
 QLabel#l_nickname,
 QLabel#label_7
 {

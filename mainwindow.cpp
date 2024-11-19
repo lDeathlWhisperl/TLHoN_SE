@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
     tab_stats = new Tab_Stats(ui->Stats);
     tab_settings = new Tab_Settings(ui->Settings);
 
-    tab_stats->initSetting(tab_settings);
+    tab_stats->initSettings(tab_settings);
 
     ui->btn_equipment->setCheckable(true);
     ui->btn_inventory->setCheckable(true);

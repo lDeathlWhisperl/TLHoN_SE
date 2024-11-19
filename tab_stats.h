@@ -12,13 +12,15 @@ class Tab_Stats : public QWidget
     Q_OBJECT
 
     int id = 0;
+    bool isBlockSignal = false;
 public:
     explicit Tab_Stats(QWidget *parent = nullptr);
-    void initSetting(class Tab_Settings* s);
+    void initSettings(class Tab_Settings* s);
     ~Tab_Stats();
 
-private slots:
+private:
     void update();
+    void le_textChanged(QString param, QString text);
 
 private:
     Ui::Tab_stats *ui;
