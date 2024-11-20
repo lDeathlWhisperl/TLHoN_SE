@@ -5,22 +5,25 @@
 #include <QJsonArray>
 #include <QJsonObject>
 #include <QJsonParseError>
+#include <QProcessEnvironment>
 
 class JsonParser
 {
     static QList<QJsonObject> json;
     static QList<QString> misc;
-    static const inline QString path = "E:\\Projects\\Qt\\TLHoN_IC\\Resourses\\Tests\\SaveData.txt";
+    static inline QString appdata = QProcessEnvironment::systemEnvironment().value("AppData");
+    static const inline QString path = "LocalLow\\OverTheMoon\\TLHON\\SaveData.txt";
+
 public:
     JsonParser() = delete;
     JsonParser(JsonParser&) = delete;
     JsonParser(JsonParser&&) = delete;
 
-    static void init();
+    static int init();
 
     static QList<QJsonObject>& getJson();
 
-    static void write();
+    static int write();
 };
 
 #endif // JSONPARSER_H
