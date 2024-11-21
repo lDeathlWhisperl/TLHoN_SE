@@ -65,7 +65,7 @@ QList<QJsonObject>& JsonParser::getJson()
 
 int JsonParser::write()
 {
-    QFile file(QProcessEnvironment::systemEnvironment().value("AppData") + path);
+    QFile file(appdata + path);
 
     if(!file.exists())
     {
