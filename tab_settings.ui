@@ -13,17 +13,39 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
       <widget class="QLabel" name="label">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>20</height>
+        </size>
+       </property>
        <property name="text">
         <string>Сохранение:</string>
        </property>
       </widget>
      </item>
-     <item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Cheater Mode:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
       <widget class="QComboBox" name="cb_saves">
        <property name="minimumSize">
         <size>
@@ -31,22 +53,14 @@
          <height>40</height>
         </size>
        </property>
+       <property name="layoutDirection">
+        <enum>Qt::LayoutDirection::LeftToRight</enum>
+       </property>
        <property name="styleSheet">
-        <string notr="true">QComboBox
-{
-    font: 16px 'Press Start 2P';
-    color: #fff;
-	background-color: rgb(18, 15, 24);
-	border: none;
-}
-QComboBox::item
-{
-	height: 20px;
-}
-QComboBox::hover
-{
-	border: 5px solid rgb(240, 255, 140);
-}</string>
+        <string notr="true"/>
+       </property>
+       <property name="maxVisibleItems">
+        <number>10</number>
        </property>
        <property name="iconSize">
         <size>
@@ -56,7 +70,46 @@ QComboBox::hover
        </property>
       </widget>
      </item>
+     <item row="1" column="1">
+      <widget class="QCheckBox" name="cb_cheater">
+       <property name="layoutDirection">
+        <enum>Qt::LayoutDirection::RightToLeft</enum>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
     </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btn_restore">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Восстановить данные</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

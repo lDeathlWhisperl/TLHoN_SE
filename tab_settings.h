@@ -19,9 +19,13 @@ public:
 
 signals:
     void characterChanged();
+    void modeToggled(bool);
 
 private slots:
     void on_cb_saves_currentIndexChanged(int index);
+    void on_btn_restore_clicked();
+
+    void on_cb_cheater_toggled(bool checked);
 
 private:
     Ui::Tab_Settings *ui;
