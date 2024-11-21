@@ -1,0 +1,80 @@
+QLabel#label_1, 
+QLabel#label_2, 
+QLabel#label_3, 
+QLabel#label_4, 
+QLabel#l_class, 
+QLabel#l_health, 
+QLabel#l_level, 
+QLabel#l_stamina, 
+QLabel#label_5, 
+QLabel#label_6,
+QLabel#label_22,
+QLabel#l_memory,
+QLabel#l_required
+{
+	font-size: 12pt;
+}
+QLineEdit
+{
+	background-color: rgb(18, 15, 24);
+	font: 11px 'Press Start 2P';
+    color: #fff;
+	border: none;
+}
+QLineEdit::hover
+{
+	color: rgb(240, 255, 140);
+}
+QLineEdit#le_memory
+{
+	font-size: 12pt;
+	color: rgb(240, 255, 140);
+}
+QLineEdit#le_memory::hover
+{
+    color: #fff;
+}
+QPushButton#btn_cheat
+{
+    font: 16px 'Press Start 2P';
+    color: #fff;
+    background-color: rgb(18, 15, 24);
+    border: none;
+}
+QPushButton#btn_cheat::hover
+{
+	color: rgb(240, 255, 140)
+}
+
+QLabel#l_nickname,
+QLabel#label_7
+{
+	font-size: 16pt;
+}
+QLabel#label_5,
+QLabel#label_6,
+QLabel#l_memory,
+QLabel#l_required
+{
+	color: rgb(240, 255, 140);
+}
+QCheckBox
+{
+    font: 11px 'Press Start 2P';
+    color: #fff;
+}
+QCheckBox::indicator
+{
+	background: #000;
+	border: 5px solid #fff;
+	width: 32;
+	height: 32;
+}
+QCheckBox::indicator::hover
+{
+	border: 5px solid rgb(228, 221, 9);
+}
+QCheckBox::indicator::checked
+{
+	background: #000 url(:/Resources/Images/Misc/Cross.png) center;
+}

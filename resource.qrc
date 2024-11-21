@@ -1,0 +1,37 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Resources/Fonts/Muli-Regular.ttf</file>
+        <file>Resources/Fonts/PressStart2P-Regular.ttf</file>
+        <file>Resources/Fonts/prstart.ttf</file>
+        <file>Resources/Fonts/prstartk.ttf</file>
+        <file>Resources/Fonts/Retro Gaming.ttf</file>
+        <file>Resources/Images/Icons/BlankIcon_Arms_HF_Small.png</file>
+        <file>Resources/Images/Icons/BlankIcon_Consumables_HF_Small.png</file>
+        <file>Resources/Images/Icons/BlankIcon_Helm_HF_Small.png</file>
+        <file>Resources/Images/Icons/BlankIcon_LeftHand_HF_Small.png</file>
+        <file>Resources/Images/Icons/BlankIcon_Legs_HF_Small.png</file>
+        <file>Resources/Images/Icons/BlankIcon_RightHand_HF_Small.png</file>
+        <file>Resources/Images/Icons/BlankIcon_Rings_HF_Small.png</file>
+        <file>Resources/Images/Icons/BlankIcon_Torso_HF_Small.png</file>
+        <file>Resources/Images/Misc/icon.ico</file>
+        <file>Resources/Images/Misc/TinyPixelMan.png</file>
+        <file>Resources/Images/Tabs/Category_Tabs_PlayerStats.png</file>
+        <file>Resources/Images/Tabs/Category_Tabs_PlayerStats_Highlighted.png</file>
+        <file>Resources/Images/Tabs/CategoryTab_Equipment.png</file>
+        <file>Resources/Images/Tabs/CategoryTab_Equipment_Highlighted.png</file>
+        <file>Resources/Images/Tabs/CategoryTab_Help.png</file>
+        <file>Resources/Images/Tabs/CategoryTab_Help_Highlighted.png</file>
+        <file>Resources/Images/Tabs/CategoryTab_Inventory.png</file>
+        <file>Resources/Images/Tabs/CategoryTab_Inventory_Highlighted.png</file>
+        <file>Resources/Images/Tabs/CategoryTab_Settings.png</file>
+        <file>Resources/Images/Tabs/CategoryTab_Settings_Highlighted.png</file>
+        <file>Resources/Sound/Gunter.mp3</file>
+        <file>Resources/StyleSheets/Global.qss</file>
+        <file>Resources/StyleSheets/Tab_Equipment.qss</file>
+        <file>Resources/StyleSheets/Tab_Stats.qss</file>
+        <file>Resources/Tests/SaveData.txt</file>
+        <file>Resources/Tests/SaveData1.txt</file>
+        <file>Resources/Images/Misc/Cross.png</file>
+        <file>Resources/StyleSheets/Tab_Settings.qss</file>
+    </qresource>
+</RCC>

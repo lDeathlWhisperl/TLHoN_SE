@@ -1,0 +1,61 @@
+QPushButton 
+{
+    border: 5px solid #fff;
+    border-radius: 7px;
+}
+QPushButton::hover
+{
+	border: 5px solid rgb(240, 255, 140);
+    border-radius: 7px;
+}
+QLabel#l_armor
+{
+    font-size: 16pt;
+}
+QPushButton#btn_lefthand_1,
+QPushButton#btn_lefthand_2
+{
+	background: url(:/Resources/Images/Icons/BlankIcon_LeftHand_HF_Small.png);
+}
+QPushButton#btn_lefthand_2
+{
+	background-color: rgb(5, 3, 8);
+}
+QPushButton#btn_righthand_1,
+QPushButton#btn_righthand_2
+{
+	background: url(:/Resources/Images/Icons/BlankIcon_RightHand_HF_Small.png);
+}
+QPushButton#btn_righthand_2
+{
+	background-color: rgb(5, 3, 8);
+}
+QPushButton#btn_helm
+{
+	background: url(:/Resources/Images/Icons/BlankIcon_Helm_HF_Small.png);
+}
+QPushButton#btn_torso
+{
+	background: url(:/Resources/Images/Icons/BlankIcon_Torso_HF_Small.png);
+}
+QPushButton#btn_arms
+{
+	background: url(:/Resources/Images/Icons/BlankIcon_Arms_HF_Small.png);
+}
+QPushButton#btn_legs
+{
+	background: url(:/Resources/Images/Icons/BlankIcon_Legs_HF_Small.png);
+}
+QPushButton#btn_consumable_1,
+QPushButton#btn_consumable_2,
+QPushButton#btn_consumable_3,
+QPushButton#btn_consumable_4,
+QPushButton#btn_consumable_5
+{
+	background: url(:/Resources/Images/Icons/BlankIcon_Consumables_HF_Small.png), center;
+}
+QPushButton#btn_rings_1,
+QPushButton#btn_rings_2
+{
+	background: url(:/Resources/Images/Icons/BlankIcon_Rings_HF_Small.png), center;
+}

@@ -1,0 +1,51 @@
+QLabel
+{
+	font-size: 16px;
+}
+QPushButton
+{
+    font: 16px 'Press Start 2P';
+    color: #fff;
+	background-color: #000;
+	border: 5px solid #fff;
+}
+QPushButton::hover
+{
+	border: 5px solid rgb(228, 221, 9);
+}
+QComboBox
+{
+    font: 16px 'Press Start 2P';
+    color: #fff;
+	background-color: #000;
+	border: none;
+}
+QComboBox::hover
+{
+	border: 5px solid rgb(228, 221, 9);
+}
+QComboBox QAbstractItemView::item
+{
+	color: rgb(131, 131, 131);
+	background: #000;
+	height: 40px;
+}
+QComboBox QAbstractItemView::item::hover
+{
+	background-color: rgb(245, 245, 245);
+}
+QCheckBox::indicator
+{
+	background: #000;
+	border: 5px solid #fff;
+	width: 32;
+	height: 32;
+}
+QCheckBox::indicator::hover
+{
+	border: 5px solid rgb(228, 221, 9);
+}
+QCheckBox::indicator::checked
+{
+	background: #000 url(:/Resources/Images/Misc/Cross.png) center;
+}
