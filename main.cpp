@@ -6,12 +6,14 @@
 
 int main(int argc, char *argv[])
 {
-    JsonParser::init();
     QApplication a(argc, argv);
+
+    if(JsonParser::init() != 0) return 0;
     MainWindow w;
 
-    setStyleFromFile(&w, ":/Resourses/StyleSheets/Global.qss");
+    setStyleFromFile(&w, ":/Resources/StyleSheets/Global.qss");
 
     w.show();
+
     return a.exec();
 }
