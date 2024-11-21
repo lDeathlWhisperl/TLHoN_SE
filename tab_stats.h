@@ -18,9 +18,13 @@ public:
     void initSettings(class Tab_Settings* s);
     ~Tab_Stats();
 
+private slots:
+    void on_btn_cheat_toggled(bool checked);
+
 private:
     void update();
     void le_textChanged(QString param, QString text);
+    void setCheat(QString param, int value);
 
 private:
     Ui::Tab_stats *ui;
