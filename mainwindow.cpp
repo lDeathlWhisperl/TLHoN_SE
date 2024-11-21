@@ -15,8 +15,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->tabWidget->tabBar()->hide();
     ui->tabWidget->setCurrentIndex(0);
-    QFontDatabase::addApplicationFont(":/Resourses/Fonts/PressStart2P-Regular.ttf");
-
+    QFontDatabase::addApplicationFont(":/Resources/Fonts/PressStart2P-Regular.ttf");
+    setWindowIcon(QIcon(":/Resources/Images/Misc/icon.ico"));
 
     tab_equipment = new Tab_Equipment(ui->Equipment);
     tab_stats = new Tab_Stats(ui->Stats);

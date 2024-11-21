@@ -8,7 +8,7 @@ Tab_Equipment::Tab_Equipment(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    setStyleFromFile(this, ":/Resourses/StyleSheets/Tab_Equipment.qss");
+    setStyleFromFile(this, ":/Resources/StyleSheets/Tab_Equipment.qss");
 }
 
 Tab_Equipment::~Tab_Equipment()
