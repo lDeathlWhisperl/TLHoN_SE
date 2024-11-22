@@ -17,16 +17,18 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+        file.rc
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(TLHoN_IC
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        resourse.qrc
-        stylefromfile.cpp stylefromfile.h tab_stats.cpp tab_stats.h tab_stats.ui
-        tab_equipment.h tab_equipment.cpp tab_equipment.ui
+        resource.qrc
+        stylefromfile.cpp stylefromfile.h
         jsonparser.h jsonparser.cpp
+        tab_stats.cpp tab_stats.h tab_stats.ui
+        tab_equipment.h tab_equipment.cpp tab_equipment.ui
         tab_settings.h tab_settings.cpp tab_settings.ui
     )
 # Define target properties for Android with Qt 6 as:
