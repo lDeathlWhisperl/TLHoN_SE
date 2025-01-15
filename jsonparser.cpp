@@ -87,3 +87,9 @@ int JsonParser::write()
 
     return 0;
 }
+
+void JsonParser::clear()
+{
+    json.clear();
+    misc.clear();
+}

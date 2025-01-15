@@ -47,6 +47,11 @@ void Tab_Settings::on_btn_restore_clicked()
     QFile::remove(appdata + path);
     QFile::rename(appdata + path + "_bckp", appdata + path);
     QFile::copy(appdata + path, appdata + path + "_bckp");
+
+    JsonParser::clear();
+    JsonParser::init();
+
+    emit saveRestored();
 }
 
 

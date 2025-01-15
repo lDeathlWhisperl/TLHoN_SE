@@ -24,6 +24,8 @@ public:
     static QList<QJsonObject>& getJson();
 
     static int write();
+
+    static void clear();
 };
 
 #endif // JSONPARSER_H

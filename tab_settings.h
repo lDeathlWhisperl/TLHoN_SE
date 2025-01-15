@@ -20,6 +20,7 @@ public:
 signals:
     void characterChanged();
     void modeToggled(bool);
+    void saveRestored();
 
 private slots:
     void on_cb_saves_currentIndexChanged(int index);
