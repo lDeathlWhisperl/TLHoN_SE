@@ -758,7 +758,7 @@
       </widget>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="vl_cheat_layout" stretch="0,0,0,0,0,0,0,0,0">
+      <layout class="QVBoxLayout" name="vl_cheat_layout" stretch="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0">
        <item>
         <widget class="QCheckBox" name="cb_backstabs">
          <property name="toolTip">
@@ -845,6 +845,63 @@
         <widget class="Line" name="line_5">
          <property name="orientation">
           <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="cb_all_armor">
+         <property name="layoutDirection">
+          <enum>Qt::LayoutDirection::RightToLeft</enum>
+         </property>
+         <property name="text">
+          <string>All armor</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="cb_all_weapon">
+         <property name="layoutDirection">
+          <enum>Qt::LayoutDirection::RightToLeft</enum>
+         </property>
+         <property name="text">
+          <string>All weapon</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="cb_all_spell">
+         <property name="layoutDirection">
+          <enum>Qt::LayoutDirection::RightToLeft</enum>
+         </property>
+         <property name="text">
+          <string>All spell</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="cb_all_rune">
+         <property name="layoutDirection">
+          <enum>Qt::LayoutDirection::RightToLeft</enum>
+         </property>
+         <property name="text">
+          <string>All rune</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="line_6">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="cb_restore_quests">
+         <property name="layoutDirection">
+          <enum>Qt::LayoutDirection::RightToLeft</enum>
+         </property>
+         <property name="text">
+          <string>Restore quests</string>
          </property>
         </widget>
        </item>

@@ -79,6 +79,7 @@ void Tab_Stats::initSettings(Tab_Settings *s)
 {
     connect(s, &Tab_Settings::characterChanged, this, &Tab_Stats::update);
     connect(s, &Tab_Settings::modeToggled, ui->btn_cheat, &QPushButton::setVisible);
+    connect(s, &Tab_Settings::saveRestored, this, &Tab_Stats::update);
 }
 
 void Tab_Stats::le_textChanged(QString param, QString text)
@@ -99,6 +100,8 @@ void Tab_Stats::setCheat(QString param, int value)
     json[id][param] = value;
 
     JsonParser::write();
+
+    update();
 }
 
 void Tab_Stats::update()
