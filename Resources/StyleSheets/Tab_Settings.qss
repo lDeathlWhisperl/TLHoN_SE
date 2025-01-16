@@ -1,3 +1,14 @@
+QLineEdit
+{
+	background-color: rgb(18, 15, 24);
+	font: 16px 'Press Start 2P';
+    color: #fff;
+	border: none;
+}
+QLineEdit::hover
+{
+	color: rgb(240, 255, 140);
+}
 QLabel
 {
 	font-size: 16px;

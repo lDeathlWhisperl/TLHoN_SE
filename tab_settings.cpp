@@ -34,10 +34,15 @@ Tab_Settings::~Tab_Settings()
 
 void Tab_Settings::on_cb_saves_currentIndexChanged(int index)
 {
+    auto& json = JsonParser::getJson();
     characterId = index;
+
+    ui->le_maxIconUses->blockSignals(true);
+    ui->le_maxIconUses->setText(QString::number(json[characterId]["maxIconUses"].toInt()));
+    ui->le_maxIconUses->blockSignals(false);
+
     emit characterChanged();
 }
-
 
 void Tab_Settings::on_btn_restore_clicked()
 {
@@ -54,9 +59,15 @@ void Tab_Settings::on_btn_restore_clicked()
     emit saveRestored();
 }
 
-
 void Tab_Settings::on_cb_cheater_toggled(bool checked)
 {
     emit modeToggled(checked);
 }
 
+void Tab_Settings::on_le_maxIconUses_editingFinished()
+{
+    auto& json = JsonParser::getJson();
+    json[characterId]["maxIconUses"] = ui->le_maxIconUses->text().toInt();
+
+    JsonParser::write();
+}

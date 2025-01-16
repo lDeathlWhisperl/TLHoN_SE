@@ -28,6 +28,8 @@ private slots:
 
     void on_cb_cheater_toggled(bool checked);
 
+    void on_le_maxIconUses_editingFinished();
+
 private:
     Ui::Tab_Settings *ui;
 };
