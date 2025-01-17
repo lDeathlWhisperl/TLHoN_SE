@@ -38,6 +38,24 @@ void disableIfCompleted(QCheckBox* cb, int value, int cond)
         cb->setChecked(true);
         cb->setEnabled(false);
     }
+    else
+    {
+        cb->setChecked(false);
+        cb->setEnabled(true);
+    }
+}
+
+QJsonObject createNewItem(const QString &guid, int uses, bool isAwake = false, bool isHoovered = false, bool hasSeen = true)
+{
+    QJsonObject newItem;
+    newItem["GUID"]                 = guid;
+    newItem["uses"]                 = uses;
+    newItem["isAwake"]              = isAwake;
+    newItem["isHoovered"]           = isHoovered;
+    newItem["hasSeen"]              = hasSeen;
+    newItem["instanceIDOnCreation"] = QUuid::createUuid().toString(QUuid::WithoutBraces);
+    newItem["newGamePlusCount"]     = 0;
+    return newItem;
 }
 
 Tab_Stats::Tab_Stats(QWidget *parent) :
@@ -158,5 +176,165 @@ void Tab_Stats::on_btn_cheat_toggled(bool checked)
     for(int i = 0; i < ui->vl_cheat_layout->count(); ++i)
         if(auto w = ui->vl_cheat_layout->itemAt(i)->widget(); w)
             w->setVisible(checked);
+
+    //TEMP
+    ui->cb_all_weapon->setHidden(true);
+    //
 }
 
+void Tab_Stats::on_cb_all_spell_toggled(bool checked)
+{
+    auto& json = JsonParser::getJson();
+    QJsonArray inventory = json[id]["inventory"].toArray();
+
+    const QList<QJsonObject> spells =
+    {
+        createNewItem("Spell_WepInfusion_StealHealth", -1),
+        createNewItem("Spell_BombCode",                -1),
+        createNewItem("Spell_ThrowablePixelStorm",     -1),
+        createNewItem("Spell_RecursionDamage",         -1),
+        createNewItem("Spell_KeepMemoryOnDeath",       -1),
+        createNewItem("Spell_SpawnDecoy",              -1),
+        createNewItem("Spell_TrapTarget",              -1),
+        createNewItem("Spell_EscapePath",              -1),
+        createNewItem("Spell_WepInfusion_Glitch",      -1),
+        createNewItem("Spell_StunSurrounding",         -1),
+        createNewItem("Spell_StartingMagicMissile",    -1),
+        createNewItem("Spell_ProjectileDOT",           -1),
+        createNewItem("Spell_HOT",                     -1),
+        createNewItem("Spell_SlowPixelBomb",           -1),
+        createNewItem("Spell_LightningChain",          -1),
+        createNewItem("Spell_Thorns",                  -1),
+        createNewItem("Throwable_FadedSkuriken",        8)
+    };
+
+    QList<QString> user_spells;
+    for(size_t i = 0; i < inventory.size(); ++i)
+        if(inventory[i].toObject()["GUID"].toString().contains(QRegularExpression("(Spell|FadedSkuriken)")))
+            user_spells.append(inventory[i].toObject()["GUID"].toString());
+
+    for(size_t i = 0; i < spells.size(); ++i)
+        if(std::find(user_spells.begin(), user_spells.end(), spells[i]["GUID"].toString()) == user_spells.end())
+        {
+            inventory.append(spells[i]);
+            qDebug() << "[NEW]" << spells[i]["GUID"].toString();
+        }
+        else
+            qDebug() << "[OLD]" << spells[i]["GUID"].toString();
+
+    json[id]["inventory"] = inventory;
+    JsonParser::write();
+}
+
+void Tab_Stats::on_cb_all_armor_toggled(bool checked)
+{
+    // auto& json = JsonParser::getJson();
+    // QJsonArray inventory = json[id]["inventory"].toArray();
+
+    // inventory.append(createNewItem("SkeletonArmor_Helm",      -1, "f0375311-df09-483b-a387-a69473ad733b"));
+    // inventory.append(createNewItem("SkeletonArmor_Torso",     -1, "5cf1fc44-24de-4ad5-8ff2-d70f0e18aebd"));
+    // inventory.append(createNewItem("SkeletonArmor_Legs",      -1, "9e647e5c-e409-45c2-bf9d-91128d09b449"));
+    // inventory.append(createNewItem("SkeletonArmor_Arms",      -1, "71fa1922-be35-4dec-afb7-2cce0eed97eb"));
+    // inventory.append(createNewItem("Armour_Chainmail_Helm",   -1, "1cee1203-52d0-41f7-9229-cf6125f8919c"));
+    // inventory.append(createNewItem("Armour_Chainmail_Torso",  -1, "19f2de79-fed1-4711-b07c-6d859f1678f7"));
+    // inventory.append(createNewItem("Armour_Chainmail_Legs",   -1, "92e0d2b1-fe11-4dd3-9b60-aa1eb1fae76b"));
+    // inventory.append(createNewItem("Armour_Chainmail_Arms",   -1, "405592d2-0f6f-4174-aa95-c68666961ce8"));
+    // inventory.append(createNewItem("AntiHero_Helm",           -1, "8129549a-dbc9-4719-9531-9ee35d00cf11"));
+    // inventory.append(createNewItem("AntiHero_Torso",          -1, "55904df1-db00-43a5-9cbc-879819bf1767"));
+    // inventory.append(createNewItem("AntiHero_Legs",           -1, "1e47ef61-ec8b-472e-a2d6-c3eedb24c927"));
+    // inventory.append(createNewItem("AntiHero_Arms",           -1, "f07ddd6c-fec3-471d-907a-2ff215d4f764"));
+    // inventory.append(createNewItem("MasterChefArmor_Helm",    -1, "6f1c156c-c7c5-4458-a141-43afcc3a6b29"));
+    // inventory.append(createNewItem("MasterChefArmor_Torso",   -1, "c78d1a30-d5a5-4bcc-96e3-8cf0d40ad6f8"));
+    // inventory.append(createNewItem("MasterChefArmor_Legs",    -1, "71c10131-043f-4d5f-a239-1e3b5db04e5f"));
+    // inventory.append(createNewItem("MasterChefArmor_Arms",    -1, "6f1e7023-57cb-4e19-aee5-c2599325da96"));
+    // inventory.append(createNewItem("CrownOfTheUndone_Helm",   -1, "39e099c9-7a71-41b2-a44f-76fd4a73dbaf"));
+    // inventory.append(createNewItem("TargetArmor_Torso",       -1, "9710e0b7-ac3c-4f9f-a926-fca323b7b652"));
+    // inventory.append(createNewItem("ChildMask_Helm",          -1, "cad261ef-3b38-4b69-9ee2-6bd0ed4374ea"));
+    // inventory.append(createNewItem("GarrettArmor_Helm",       -1, "2d9f32fe-0283-4532-911e-55c8cdbabec1"));
+    // inventory.append(createNewItem("GarrettArmor_Torso",      -1, "90179da1-92b5-4e96-8446-16ca5d4605e7"));
+    // inventory.append(createNewItem("GarrettArmor_Legs",       -1, "97c0e907-bf94-4e81-b2f5-ae51334ea6d8"));
+    // inventory.append(createNewItem("GarrettArmor_Arms",       -1, "45bc1d29-2aea-4f31-a041-a15a8548d950"));
+    // inventory.append(createNewItem("WorryWatchers_Helm",      -1, "8f9de72d-3cf4-43e6-baf5-88df46554684"));
+    // inventory.append(createNewItem("JacketArmor_Helm",        -1, "55162a37-4b0f-4b08-95a7-ef2ef305eedc"));
+    // inventory.append(createNewItem("JacketArmor_Torso",       -1, "f025cb4f-cb8d-44ad-ac3a-1b39097fdb3b"));
+    // inventory.append(createNewItem("JacketArmor_Legs",        -1, "8713ab39-6fcf-4204-92cf-3ed45a5a4694"));
+    // inventory.append(createNewItem("JacketArmor_Arms",        -1, "9f209ca9-f01f-452e-891f-cc44120f40e1"));
+    // inventory.append(createNewItem("TerraArmor_Helm",         -1, "8f44ad11-9acd-47b0-a5b3-7bda2666fcca"));
+    // inventory.append(createNewItem("TerraArmor_Torso",        -1, "657b8604-f22f-4686-a195-6657d74f68ba"));
+    // inventory.append(createNewItem("TerraArmor_Legs",         -1, "515ac888-f6a3-4129-b848-d14d4a232055"));
+    // inventory.append(createNewItem("TerraArmor_Arms",         -1, "e5365c63-211a-4298-9be5-d82edc9079b1"));
+    // inventory.append(createNewItem("RedRacer_Legs",           -1, "fde35206-017b-4f5f-8a47-0378144369f5"));
+    // inventory.append(createNewItem("WelcomeArmour_TopHat",    -1, "453d4831-123c-440b-920a-3222c56f602f"));
+    // inventory.append(createNewItem("PixelKnight_Helm",        -1, "966f6f4e-6905-46ec-a49b-8dd4e4869222"));
+    // inventory.append(createNewItem("PixelKnight_Torso",       -1, "ce7f286a-e1da-4ea8-940a-0a3dcdc959e4"));
+    // inventory.append(createNewItem("PixelKnight_Legs",        -1, "776be9cc-1304-4e4b-876b-754eb43d2ad4"));
+    // inventory.append(createNewItem("PixelKnight_Arms",        -1, "3614121e-acfb-4b35-ae4d-17ae904dfdda"));
+    // inventory.append(createNewItem("LeisureSuit_Legs",        -1, "a1abc5ba-3bc4-4192-8e57-d7bdc4c5795e"));
+    // inventory.append(createNewItem("LeatherArmour_Torso",     -1, "3afe05cb-3625-445c-ae2b-3cf83cbdd874"));
+    // inventory.append(createNewItem("LeatherArmour_Legs",      -1, "d7aaf5b6-be9e-4dc8-b4b5-0a08a4e0f80c"));
+    // inventory.append(createNewItem("LeatherArmour_Arms",      -1, "f6034e6a-a087-4663-becb-ba094d89bdec"));
+    // inventory.append(createNewItem("BikiniArmor_Torso",       -1, "185df85b-a95e-4027-b325-058fcfdf63d9"));
+    // inventory.append(createNewItem("BikiniArmor_Legs",        -1, "4d8d889c-1aaf-4d38-9f72-9c07b29342ed"));
+    // inventory.append(createNewItem("IsaacArmor_Helm",         -1, "e7aeaf49-7ded-46e1-8ca6-2a7d08a7721b"));
+    // inventory.append(createNewItem("IsaacArmor_Torso",        -1, "14f5c973-bb1d-47e2-a72f-18fa1b5e20bb"));
+    // inventory.append(createNewItem("IsaacArmor_Legs",         -1, "9b5c4e2f-2d5e-4a2b-977d-4948aadedecf"));
+    // inventory.append(createNewItem("IsaacArmor_Arms",         -1, "30552226-620a-4c7c-acb9-7f231270c0df"));
+    // inventory.append(createNewItem("AloyArmor_Helm",          -1, "7dea414f-fe73-4549-b4a8-93dbc0ce756a"));
+    // inventory.append(createNewItem("AloyArmor_Torso",         -1, "de477e66-87d5-4864-a1cc-f2f8823e0219"));
+    // inventory.append(createNewItem("AloyArmor_Legs",          -1, "098317fa-7499-4c51-98e3-751579962646"));
+    // inventory.append(createNewItem("AloyArmor_Arms",          -1, "ee70d2bf-7205-458b-a04c-4170f9bb9cd9"));
+    // inventory.append(createNewItem("ForestKid_Helm",          -1, "8ceb1755-f62c-487e-87c8-729173082d08"));
+    // inventory.append(createNewItem("DirkArmor_Helm",          -1, "146928b0-dc57-4de8-93dd-6ad61a9b674c"));
+    // inventory.append(createNewItem("DirkArmor_Torso",         -1, "a2f94486-2dcc-4330-94ac-3e7d7d6b9752"));
+    // inventory.append(createNewItem("DirkArmor_Legs",          -1, "ee648c06-33fb-4ff7-975a-3662875de686"));
+    // inventory.append(createNewItem("DirkArmor_Arms",          -1, "5c4fff71-cf0c-48c9-ae17-717ab99398c5"));
+    // inventory.append(createNewItem("NationalistArmour_Helm",  -1, "7f939889-0320-4afe-8289-ca8804f1fb3f"));
+    // inventory.append(createNewItem("MercuccioArmor_Helm",     -1, "336abce8-d0e3-4088-a078-e5d7a81d0010"));
+    // inventory.append(createNewItem("MercuccioArmor_Torso",    -1, "dc8c2dd3-9d91-40eb-925f-bd42a5a4e792"));
+    // inventory.append(createNewItem("MercuccioArmor_Legs",     -1, "fcc0936b-a9fe-48a9-9adb-232f48ab220e"));
+    // inventory.append(createNewItem("MercuccioArmor_Arms",     -1, "19598710-730b-429a-917d-4fe915762eca"));
+    // inventory.append(createNewItem("PapersPleaseArmor_Helm",  -1, "c5e83333-cf48-48f7-aec8-62699eaac839"));
+    // inventory.append(createNewItem("PapersPleaseArmor_Torso", -1, "88440795-49e9-4141-90e1-e45258b44859"));
+    // inventory.append(createNewItem("PapersPleaseArmor_Legs",  -1, "ee3bc918-4187-4f49-b236-93015720e857"));
+    // inventory.append(createNewItem("PapersPleaseArmor_Arms",  -1, "394e2e71-5cce-49e1-9d6a-7d6cae6c482a"));
+
+    // qDebug() << inventory.size();
+    // json[id]["inventory"] = inventory;
+    // JsonParser::write();
+    // ui->cb_all_armor->setEnabled(false);
+}
+
+void Tab_Stats::on_cb_all_rune_toggled(bool checked)
+{
+    // auto& json = JsonParser::getJson();
+    // QJsonArray inventory = json[id]["inventory"].toArray();
+
+    // inventory.append(createNewItem("Relic_DecreaseProjectileStagger", 1, "6b5800fc-1e11-4fe1-87c0-c19d3bb88bda"));
+    // inventory.append(createNewItem("Relic_RollIFramesUp",             1, "097d8ace-0d3c-4a72-afdf-30cbb12fa336"));
+    // inventory.append(createNewItem("Relic_StatUp_Strength",           1, "9c590659-953a-474f-a252-48c07f2a10e6"));
+    // inventory.append(createNewItem("Relic_PoiseUp",                   1, "bae542f7-eaad-49cd-a626-4ea2d8189c39"));
+    // inventory.append(createNewItem("Relic_MemoryDropIncrease",        1, "6644c9bb-e839-4e2d-8b12-7f08340b4fa4"));
+    // inventory.append(createNewItem("Relic_CritChanceUp",              1, "af866dec-3cea-4323-8240-f994e9f75b3b"));
+    // inventory.append(createNewItem("Relic_StaminaRegen",              1, "9de16667-e57a-4d0e-9ec1-7327b249c599"));
+    // inventory.append(createNewItem("Relic_MagicDefenseUp",            1, "695e22bb-533e-44e9-89e7-6c609628a24b"));
+    // inventory.append(createNewItem("Relic_StatUp_Dex",                1, "3c3be876-ef25-49ad-a551-b2dc4e39594b"));
+    // inventory.append(createNewItem("Relic_KiteParryBoost",            1, "b95b1691-f265-4d52-93bb-5b2d31e3ba3c"));
+    // inventory.append(createNewItem("Relic_SwordParryBoost",           1, "f373e710-78fb-4b73-96a7-93c33cffb0a2"));
+    // inventory.append(createNewItem("Relic_StatUp_Mag",                1, "5ded6c5b-52cd-4fcb-ab72-825d5e42783d"));
+    // inventory.append(createNewItem("Relic_MagicThorns",               1, "0f92cecc-39a0-418f-bb0b-7d642581b1e9"));
+    // inventory.append(createNewItem("Relic_Damage_Abominations",       1, "d561100d-cdf5-4b2a-87f4-8f7bf8e64dfe"));
+    // inventory.append(createNewItem("Relic_Damage_Beasts",             1, "6183b844-8a9c-4369-94f7-f0e91cf690f2"));
+    // inventory.append(createNewItem("Relic_Damage_Evil",               1, "3b6e2bda-c34c-4ad6-ab5d-29acb9464750"));
+    // inventory.append(createNewItem("Relic_Damage_Humanoids",          1, "099da0fc-ed3c-42ea-af0e-902e3464c32c"));
+    // inventory.append(createNewItem("Relic_HealthRegenOnCrit",         1, "d120939e-cb1b-4bd8-9bd2-fecdf0cfce57"));
+    // inventory.append(createNewItem("Relic_DecreaseStaminaUsage",      1, "91e054c6-e507-4f8c-871e-5884fa616461"));
+    // inventory.append(createNewItem("Relic_IncreaseHeroicIconPotency", 1, "2df61014-2ee6-46b7-837a-53982cc041f7"));
+    // inventory.append(createNewItem("Relic_AmmoCapacityUp",            1, "069ccf39-f9f9-4d93-9213-4bc65443af84"));
+    // inventory.append(createNewItem("Relic_RecursionDamageUp",         1, "c4262c44-6a9e-4c28-9d23-ff63af14ae31"));
+    // inventory.append(createNewItem("Relic_EquipLoadUp",               1, "9946fa77-ed2e-458e-9a65-2c2db2e18cb7"));
+    // inventory.append(createNewItem("Relic_ReduceBuildUp",             1, "2f96f0f3-af0f-41c8-8eb8-f20dcce30e0c"));
+    // inventory.append(createNewItem("Relic_HealthBelowAtkBoost",       1, "c510864e-83b2-4d5a-9f93-c7e1ba3e8338"));
+
+    // json[id]["inventory"] = inventory;
+    // JsonParser::write();
+}
