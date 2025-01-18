@@ -45,7 +45,7 @@ void disableIfCompleted(QCheckBox* cb, int value, int cond)
     }
 }
 
-QJsonObject createNewItem(const QString &guid, int uses, bool isAwake = false, bool isHoovered = false, bool hasSeen = true)
+QJsonObject createNewItem(const QString &guid, int uses = -1, bool isAwake = false, bool isHoovered = false, bool hasSeen = true)
 {
     QJsonObject newItem;
     newItem["GUID"]                 = guid;
@@ -187,40 +187,42 @@ void Tab_Stats::on_cb_all_spell_toggled(bool checked)
     auto& json = JsonParser::getJson();
     QJsonArray inventory = json[id]["inventory"].toArray();
 
-    const QList<QJsonObject> spells =
+    QList<QString> spells =
     {
-        createNewItem("Spell_WepInfusion_StealHealth", -1),
-        createNewItem("Spell_BombCode",                -1),
-        createNewItem("Spell_ThrowablePixelStorm",     -1),
-        createNewItem("Spell_RecursionDamage",         -1),
-        createNewItem("Spell_KeepMemoryOnDeath",       -1),
-        createNewItem("Spell_SpawnDecoy",              -1),
-        createNewItem("Spell_TrapTarget",              -1),
-        createNewItem("Spell_EscapePath",              -1),
-        createNewItem("Spell_WepInfusion_Glitch",      -1),
-        createNewItem("Spell_StunSurrounding",         -1),
-        createNewItem("Spell_StartingMagicMissile",    -1),
-        createNewItem("Spell_ProjectileDOT",           -1),
-        createNewItem("Spell_HOT",                     -1),
-        createNewItem("Spell_SlowPixelBomb",           -1),
-        createNewItem("Spell_LightningChain",          -1),
-        createNewItem("Spell_Thorns",                  -1),
-        createNewItem("Throwable_FadedSkuriken",        8)
+        "Spell_WepInfusion_StealHealth",
+        "Spell_BombCode",
+        "Spell_ThrowablePixelStorm",
+        "Spell_RecursionDamage",
+        "Spell_KeepMemoryOnDeath",
+        "Spell_SpawnDecoy",
+        "Spell_TrapTarget",
+        "Spell_EscapePath",
+        "Spell_WepInfusion_Glitch",
+        "Spell_StunSurrounding",
+        "Spell_StartingMagicMissile",
+        "Spell_ProjectileDOT",
+        "Spell_HOT",
+        "Spell_SlowPixelBomb",
+        "Spell_LightningChain",
+        "Spell_Thorns",
+        "Throwable_FadedSkuriken"
     };
 
-    QList<QString> user_spells;
     for(size_t i = 0; i < inventory.size(); ++i)
-        if(inventory[i].toObject()["GUID"].toString().contains(QRegularExpression("(Spell|FadedSkuriken)")))
-            user_spells.append(inventory[i].toObject()["GUID"].toString());
+        if(const auto& item = inventory[i].toObject()["GUID"].toString(); item.contains(QRegularExpression("(Spell|FadedSkuriken)")))
+            spells.removeOne(item);
 
-    for(size_t i = 0; i < spells.size(); ++i)
-        if(std::find(user_spells.begin(), user_spells.end(), spells[i]["GUID"].toString()) == user_spells.end())
-        {
-            inventory.append(spells[i]);
-            qDebug() << "[NEW]" << spells[i]["GUID"].toString();
-        }
-        else
-            qDebug() << "[OLD]" << spells[i]["GUID"].toString();
+    if(spells.empty())
+    {
+        ui->cb_all_spell->blockSignals(true);
+        ui->cb_all_spell->setChecked(true);
+        ui->cb_all_spell->blockSignals(false);
+        qDebug() << "You already have all spells";
+        return;
+    }
+
+    for(const auto& spell : spells)
+        inventory.append(createNewItem(spell));
 
     json[id]["inventory"] = inventory;
     JsonParser::write();
@@ -306,35 +308,54 @@ void Tab_Stats::on_cb_all_armor_toggled(bool checked)
 
 void Tab_Stats::on_cb_all_rune_toggled(bool checked)
 {
-    // auto& json = JsonParser::getJson();
-    // QJsonArray inventory = json[id]["inventory"].toArray();
+    auto& json = JsonParser::getJson();
+    QJsonArray inventory = json[id]["inventory"].toArray();
 
-    // inventory.append(createNewItem("Relic_DecreaseProjectileStagger", 1, "6b5800fc-1e11-4fe1-87c0-c19d3bb88bda"));
-    // inventory.append(createNewItem("Relic_RollIFramesUp",             1, "097d8ace-0d3c-4a72-afdf-30cbb12fa336"));
-    // inventory.append(createNewItem("Relic_StatUp_Strength",           1, "9c590659-953a-474f-a252-48c07f2a10e6"));
-    // inventory.append(createNewItem("Relic_PoiseUp",                   1, "bae542f7-eaad-49cd-a626-4ea2d8189c39"));
-    // inventory.append(createNewItem("Relic_MemoryDropIncrease",        1, "6644c9bb-e839-4e2d-8b12-7f08340b4fa4"));
-    // inventory.append(createNewItem("Relic_CritChanceUp",              1, "af866dec-3cea-4323-8240-f994e9f75b3b"));
-    // inventory.append(createNewItem("Relic_StaminaRegen",              1, "9de16667-e57a-4d0e-9ec1-7327b249c599"));
-    // inventory.append(createNewItem("Relic_MagicDefenseUp",            1, "695e22bb-533e-44e9-89e7-6c609628a24b"));
-    // inventory.append(createNewItem("Relic_StatUp_Dex",                1, "3c3be876-ef25-49ad-a551-b2dc4e39594b"));
-    // inventory.append(createNewItem("Relic_KiteParryBoost",            1, "b95b1691-f265-4d52-93bb-5b2d31e3ba3c"));
-    // inventory.append(createNewItem("Relic_SwordParryBoost",           1, "f373e710-78fb-4b73-96a7-93c33cffb0a2"));
-    // inventory.append(createNewItem("Relic_StatUp_Mag",                1, "5ded6c5b-52cd-4fcb-ab72-825d5e42783d"));
-    // inventory.append(createNewItem("Relic_MagicThorns",               1, "0f92cecc-39a0-418f-bb0b-7d642581b1e9"));
-    // inventory.append(createNewItem("Relic_Damage_Abominations",       1, "d561100d-cdf5-4b2a-87f4-8f7bf8e64dfe"));
-    // inventory.append(createNewItem("Relic_Damage_Beasts",             1, "6183b844-8a9c-4369-94f7-f0e91cf690f2"));
-    // inventory.append(createNewItem("Relic_Damage_Evil",               1, "3b6e2bda-c34c-4ad6-ab5d-29acb9464750"));
-    // inventory.append(createNewItem("Relic_Damage_Humanoids",          1, "099da0fc-ed3c-42ea-af0e-902e3464c32c"));
-    // inventory.append(createNewItem("Relic_HealthRegenOnCrit",         1, "d120939e-cb1b-4bd8-9bd2-fecdf0cfce57"));
-    // inventory.append(createNewItem("Relic_DecreaseStaminaUsage",      1, "91e054c6-e507-4f8c-871e-5884fa616461"));
-    // inventory.append(createNewItem("Relic_IncreaseHeroicIconPotency", 1, "2df61014-2ee6-46b7-837a-53982cc041f7"));
-    // inventory.append(createNewItem("Relic_AmmoCapacityUp",            1, "069ccf39-f9f9-4d93-9213-4bc65443af84"));
-    // inventory.append(createNewItem("Relic_RecursionDamageUp",         1, "c4262c44-6a9e-4c28-9d23-ff63af14ae31"));
-    // inventory.append(createNewItem("Relic_EquipLoadUp",               1, "9946fa77-ed2e-458e-9a65-2c2db2e18cb7"));
-    // inventory.append(createNewItem("Relic_ReduceBuildUp",             1, "2f96f0f3-af0f-41c8-8eb8-f20dcce30e0c"));
-    // inventory.append(createNewItem("Relic_HealthBelowAtkBoost",       1, "c510864e-83b2-4d5a-9f93-c7e1ba3e8338"));
+    QList<QString> runes =
+    {
+        "Relic_DecreaseProjectileStagger",
+        "Relic_RollIFramesUp",
+        "Relic_StatUp_Strength",
+        "Relic_PoiseUp",
+        "Relic_MemoryDropIncrease",
+        "Relic_CritChanceUp",
+        "Relic_StaminaRegen",
+        "Relic_MagicDefenseUp",
+        "Relic_StatUp_Dex",
+        "Relic_KiteParryBoost",
+        "Relic_SwordParryBoost",
+        "Relic_StatUp_Mag",
+        "Relic_MagicThorns",
+        "Relic_Damage_Abominations",
+        "Relic_Damage_Beasts",
+        "Relic_Damage_Evil",
+        "Relic_Damage_Humanoids",
+        "Relic_HealthRegenOnCrit",
+        "Relic_DecreaseStaminaUsage",
+        "Relic_IncreaseHeroicIconPotency",
+        "Relic_AmmoCapacityUp",
+        "Relic_RecursionDamageUp",
+        "Relic_EquipLoadUp",
+        "Relic_ReduceBuildUp",
+        "Relic_HealthBelowAtkBoost",
+    };
 
-    // json[id]["inventory"] = inventory;
-    // JsonParser::write();
+    for(size_t i = 0; i < inventory.size(); ++i)
+        if(const auto& item = inventory[i].toObject()["GUID"].toString(); item.contains("Relic_"))
+            runes.removeOne(item);
+
+    if(runes.empty())
+    {
+        ui->cb_all_rune->blockSignals(true);
+        ui->cb_all_rune->setChecked(true);
+        ui->cb_all_rune->blockSignals(false);
+        qDebug() << "You already have all runes";
+        return;
+    }
+
+    for(const auto& rune : runes)
+        inventory.append(createNewItem(rune));
+
+    json[id]["inventory"] = inventory;
+    JsonParser::write();
 }
