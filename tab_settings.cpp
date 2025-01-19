@@ -20,6 +20,8 @@ Tab_Settings::Tab_Settings(QWidget *parent)
     auto json = JsonParser::getJson();
     for(auto& obj : JsonParser::getJson())
         ui->cb_saves->addItem(" " + obj["name"].toString());
+
+    ui->cb_language->setCurrentIndex(1);
 }
 
 int Tab_Settings::getCharacterId()
@@ -67,7 +69,41 @@ void Tab_Settings::on_cb_cheater_toggled(bool checked)
 void Tab_Settings::on_le_maxIconUses_editingFinished()
 {
     auto& json = JsonParser::getJson();
-    json[characterId]["maxIconUses"] = ui->le_maxIconUses->text().toInt();
+
+    int max = ui->le_maxIconUses->text().toInt();
+    if(max < 1)
+    {
+        max = 1;
+        ui->le_maxIconUses->blockSignals(true);
+        ui->le_maxIconUses->setText("1");
+        ui->le_maxIconUses->blockSignals(true);
+    }
+
+    json[characterId]["maxIconUses"] = max;
 
     JsonParser::write();
 }
+
+void Tab_Settings::on_cb_language_currentIndexChanged(int index)
+{
+    qApp->removeTranslator(&translator);
+    QString file;
+
+    switch (index)
+    {
+    case 0:
+        file = ":/translations/TLHoN_OC_ru.qm";
+        break;
+    case 1:
+    default:
+        file = ":/translations/TLHoN_OC_en.qm";
+        break;
+    }
+
+    if(translator.load(file))
+        qApp->installTranslator(&translator);
+
+    emit ui->retranslateUi(this);
+    emit languageChanged();
+}
+

@@ -2,6 +2,7 @@
 #define TAB_SETTINGS_H
 
 #include <QWidget>
+#include <QTranslator>
 
 namespace Ui {
 class Tab_Settings;
@@ -21,6 +22,7 @@ signals:
     void characterChanged();
     void modeToggled(bool);
     void saveRestored();
+    void languageChanged();
 
 private slots:
     void on_cb_saves_currentIndexChanged(int index);
@@ -30,8 +32,11 @@ private slots:
 
     void on_le_maxIconUses_editingFinished();
 
+    void on_cb_language_currentIndexChanged(int index);
+
 private:
     Ui::Tab_Settings *ui;
+    QTranslator translator;
 };
 
 #endif // TAB_SETTINGS_H

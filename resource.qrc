@@ -33,5 +33,7 @@
         <file>Resources/Tests/SaveData1.txt</file>
         <file>Resources/Images/Misc/Cross.png</file>
         <file>Resources/StyleSheets/Tab_Settings.qss</file>
+        <file>translations/TLHoN_IC_ru.qm</file>
+        <file>translations/TLHoN_OC_en.qm</file>
     </qresource>
 </RCC>

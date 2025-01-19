@@ -53,6 +53,8 @@ MainWindow::MainWindow(QWidget *parent) :
     tab_equipment->show();
     tab_stats->show();
     tab_settings->show();
+
+    connect(tab_settings, &Tab_Settings::languageChanged, [this]() { emit ui->retranslateUi(this); });
 }
 
 void MainWindow::onTabButtonClicked(QPushButton *button, QLabel *label, int tabIndex)
