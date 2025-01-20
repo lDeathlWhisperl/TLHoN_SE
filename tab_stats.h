@@ -20,13 +20,8 @@ public:
 
 private slots:
     void on_btn_cheat_toggled(bool checked);
-    void on_cb_all_spell_toggled(bool checked);
-
-
-    void on_cb_all_armor_toggled(bool checked);
-
-    void on_cb_all_rune_toggled(bool checked);
-
+    void all_item_cheat(class QCheckBox* cb, const QList<QString>& items, const QString& regex);
+    // void translate();
 private:
     void update();
     void le_textChanged(QString param, QString text);

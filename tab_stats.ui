@@ -787,6 +787,9 @@
        </item>
        <item>
         <widget class="QCheckBox" name="cb_rebuffs">
+         <property name="toolTip">
+          <string>Если активировано, то нужно оформить всего один репост для достижения</string>
+         </property>
          <property name="layoutDirection">
           <enum>Qt::LayoutDirection::RightToLeft</enum>
          </property>
@@ -851,7 +854,7 @@
        <item>
         <widget class="QCheckBox" name="cb_all_armor">
          <property name="toolTip">
-          <string/>
+          <string>Добавляет всю броню</string>
          </property>
          <property name="layoutDirection">
           <enum>Qt::LayoutDirection::RightToLeft</enum>
@@ -867,7 +870,7 @@
           <bool>true</bool>
          </property>
          <property name="toolTip">
-          <string/>
+          <string>Добавляет все оружие</string>
          </property>
          <property name="layoutDirection">
           <enum>Qt::LayoutDirection::RightToLeft</enum>
@@ -880,7 +883,7 @@
        <item>
         <widget class="QCheckBox" name="cb_all_spell">
          <property name="toolTip">
-          <string/>
+          <string>Добавляет всю магию</string>
          </property>
          <property name="layoutDirection">
           <enum>Qt::LayoutDirection::RightToLeft</enum>
@@ -893,7 +896,7 @@
        <item>
         <widget class="QCheckBox" name="cb_all_rune">
          <property name="toolTip">
-          <string/>
+          <string>Добавляет все руны</string>
          </property>
          <property name="layoutDirection">
           <enum>Qt::LayoutDirection::RightToLeft</enum>
@@ -912,11 +915,14 @@
        </item>
        <item>
         <widget class="QCheckBox" name="cb_restore_quests">
+         <property name="toolTip">
+          <string>Сбрасывает все квесты. Позволяет проходить квесты не переходя в новую игру</string>
+         </property>
          <property name="layoutDirection">
           <enum>Qt::LayoutDirection::RightToLeft</enum>
          </property>
          <property name="text">
-          <string>Restore quests</string>
+          <string>Reset quests</string>
          </property>
         </widget>
        </item>
