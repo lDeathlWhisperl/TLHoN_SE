@@ -6,8 +6,10 @@
 
 #include <QFile>
 #include <QProcessEnvironment>
+#include <QSettings>
 
 int Tab_Settings::characterId;
+QString Tab_Settings::language = "en";
 
 Tab_Settings::Tab_Settings(QWidget *parent)
     : QWidget(parent)
@@ -20,13 +22,24 @@ Tab_Settings::Tab_Settings(QWidget *parent)
     auto json = JsonParser::getJson();
     for(auto& obj : JsonParser::getJson())
         ui->cb_saves->addItem(" " + obj["name"].toString());
-
-    ui->cb_language->setCurrentIndex(1);
 }
 
 int Tab_Settings::getCharacterId()
 {
     return characterId;
+}
+
+QString Tab_Settings::getLanguage()
+{
+    return language;
+}
+
+void Tab_Settings::initLanguage()
+{
+    on_cb_language_currentIndexChanged(loadSettings("language").toInt());
+    ui->cb_language->blockSignals(true);
+    ui->cb_language->setCurrentIndex(loadSettings("language").toInt());
+    ui->cb_language->blockSignals(false);
 }
 
 Tab_Settings::~Tab_Settings()
@@ -91,19 +104,35 @@ void Tab_Settings::on_cb_language_currentIndexChanged(int index)
 
     switch (index)
     {
-    case 0:
-        file = ":/translations/TLHoN_OC_ru.qm";
-        break;
     case 1:
+        file = ":/translations/TLHoN_OC_ru.qm";
+        language = "ru";
+        break;
     default:
         file = ":/translations/TLHoN_OC_en.qm";
+        language = "en";
         break;
     }
+
+    saveSettings("Language", QString::number(index));
 
     if(translator.load(file))
         qApp->installTranslator(&translator);
 
     emit ui->retranslateUi(this);
     emit languageChanged();
+
+    on_cb_saves_currentIndexChanged(characterId);
 }
 
+void Tab_Settings::saveSettings(const QString &key, const QString &value)
+{
+    QSettings settings("DeathWhisper", "TLHoN_IC");
+    settings.setValue(key, value);
+}
+
+QString Tab_Settings::loadSettings(const QString &key)
+{
+    QSettings settings("DeathWhisper", "TLHoN_IC");
+    return settings.value(key).toString();
+}

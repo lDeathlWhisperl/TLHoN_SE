@@ -16,19 +16,21 @@ enum
 
 QString getClass(int c)
 {
-    switch(c)
-    {
-    case DATADIN:
-        return "Инфорыцарь";
-    case FORMATTER:
-        return "Форматировщик";
-    case RESOLUTIONARY:
-        return "Разбойник";
-    case SOURCERER:
-        return "Чарокодер";
-    default:
-        return "Рандомастер";
-    }
+    QMap<int, QMap<QString, QString>> classes;
+
+    classes[DATADIN]      ["ru"] = "Инфорыцарь";
+    classes[FORMATTER]    ["ru"] = "Форматировщик";
+    classes[RESOLUTIONARY]["ru"] = "Разбойник";
+    classes[SOURCERER]    ["ru"] = "Чарокодер";
+    classes[RANDOMASTER]  ["ru"] = "Рандомастер";
+
+    classes[DATADIN]      ["en"] = "DATADIN";
+    classes[FORMATTER]    ["en"] = "FORMATTER";
+    classes[RESOLUTIONARY]["en"] = "RESOLUTIONARY";
+    classes[SOURCERER]    ["en"] = "SOURCERER";
+    classes[RANDOMASTER]  ["en"] = "RANDOMASTER";
+
+    return classes[c][Tab_Settings::getLanguage()];
 }
 
 void disableIfCompleted(QCheckBox* cb, int value, int cond)
@@ -66,14 +68,14 @@ Tab_Stats::Tab_Stats(QWidget *parent) :
 
     setStyleFromFile(this, ":/Resources/StyleSheets/Tab_Stats.qss");
 
-    connect(ui->le_memory,          &QLineEdit::editingFinished, [this]() { le_textChanged("memory",             ui->le_memory->text());          });
-    connect(ui->le_stat_vitality,   &QLineEdit::editingFinished, [this]() { le_textChanged("_stat_vitality",     ui->le_stat_vitality->text());   });
-    connect(ui->le_stat_stamina,    &QLineEdit::editingFinished, [this]() { le_textChanged("_stat_stamina",      ui->le_stat_stamina->text());    });
-    connect(ui->le_stat_equipLoad,  &QLineEdit::editingFinished, [this]() { le_textChanged("_stat_equipLoad",    ui->le_stat_equipLoad->text());  });
-    connect(ui->le_stat_strength,   &QLineEdit::editingFinished, [this]() { le_textChanged("_stat_strength",     ui->le_stat_strength->text());   });
-    connect(ui->le_stat_dexterity,  &QLineEdit::editingFinished, [this]() { le_textChanged("_stat_dexterity",    ui->le_stat_dexterity->text());  });
-    connect(ui->le_stat_attunement, &QLineEdit::editingFinished, [this]() { le_textChanged("_stat_attunement",   ui->le_stat_attunement->text()); });
-    connect(ui->le_stat_luck,       &QLineEdit::editingFinished, [this]() { le_textChanged("_stat_luck",         ui->le_stat_luck->text());       });
+    connect(ui->le_memory,          &QLineEdit::editingFinished, [this]() { le_textChanged("memory",           ui->le_memory->text());          });
+    connect(ui->le_stat_vitality,   &QLineEdit::editingFinished, [this]() { le_textChanged("_stat_vitality",   ui->le_stat_vitality->text());   });
+    connect(ui->le_stat_stamina,    &QLineEdit::editingFinished, [this]() { le_textChanged("_stat_stamina",    ui->le_stat_stamina->text());    });
+    connect(ui->le_stat_equipLoad,  &QLineEdit::editingFinished, [this]() { le_textChanged("_stat_equipLoad",  ui->le_stat_equipLoad->text());  });
+    connect(ui->le_stat_strength,   &QLineEdit::editingFinished, [this]() { le_textChanged("_stat_strength",   ui->le_stat_strength->text());   });
+    connect(ui->le_stat_dexterity,  &QLineEdit::editingFinished, [this]() { le_textChanged("_stat_dexterity",  ui->le_stat_dexterity->text());  });
+    connect(ui->le_stat_attunement, &QLineEdit::editingFinished, [this]() { le_textChanged("_stat_attunement", ui->le_stat_attunement->text()); });
+    connect(ui->le_stat_luck,       &QLineEdit::editingFinished, [this]() { le_textChanged("_stat_luck",       ui->le_stat_luck->text());       });
 
     connect(ui->cb_backstabs,  &QCheckBox::toggled, [this](bool) { setCheat("backstabCount",      20); });
     connect(ui->cb_repostes,   &QCheckBox::toggled, [this](bool) { setCheat("reposteCount",       20); });
@@ -221,7 +223,7 @@ void Tab_Stats::initSettings(Tab_Settings *s)
     connect(s, &Tab_Settings::characterChanged, this, &Tab_Stats::update);
     connect(s, &Tab_Settings::modeToggled, ui->btn_cheat, &QPushButton::setVisible);
     connect(s, &Tab_Settings::saveRestored, this, &Tab_Stats::update);
-    connect(s, &Tab_Settings::languageChanged, [this](){ui->retranslateUi(this); update();});
+    connect(s, &Tab_Settings::languageChanged, [this](){ui->retranslateUi(this); });
 }
 
 void Tab_Stats::le_textChanged(QString param, QString text)
@@ -305,23 +307,7 @@ void Tab_Stats::on_btn_cheat_toggled(bool checked)
     ui->cb_all_weapon->setHidden(true);
     //
 }
-/*
 
-
-void Tab_Stats::on_cb_all_armor_toggled(bool checked)
-{
-    // auto& json = JsonParser::getJson();
-    // QJsonArray inventory = json[id]["inventory"].toArray();
-
-
-
-    // qDebug() << inventory.size();
-    // json[id]["inventory"] = inventory;
-    // JsonParser::write();
-    // ui->cb_all_armor->setEnabled(false);
-}
-
-*/
 void Tab_Stats::all_item_cheat(QCheckBox* cb, const QList<QString>& items, const QString& regex)
 {
     auto& json = JsonParser::getJson();

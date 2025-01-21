@@ -68,7 +68,7 @@
         <enum>Qt::LayoutDirection::LeftToRight</enum>
        </property>
        <property name="text">
-        <string>0</string>
+        <string/>
        </property>
        <property name="alignment">
         <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -144,12 +144,12 @@
        </property>
        <item>
         <property name="text">
-         <string> Русский</string>
+         <string> English</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string> English</string>
+         <string> Русский</string>
         </property>
        </item>
       </widget>

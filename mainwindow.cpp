@@ -22,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
     tab_stats = new Tab_Stats(ui->Stats);
     tab_settings = new Tab_Settings(ui->Settings);
 
+    tab_equipment->initSettings(tab_settings);
     tab_stats->initSettings(tab_settings);
 
     ui->btn_equipment->setCheckable(true);
@@ -46,6 +47,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->btn_settings,  &QPushButton::toggled, [this]() { onTabButtonClicked(ui->btn_settings,  ui->l_settings,  3); });
     connect(ui->btn_help,      &QPushButton::toggled, [this]() { onTabButtonClicked(ui->btn_help,      ui->l_help,      4); });
 
+    connect(tab_settings, &Tab_Settings::languageChanged, [this]() { emit ui->retranslateUi(this); });
+
     ui->vl_equipment_layout->addWidget(tab_equipment);
     ui->vl_stats_layout->addWidget(tab_stats);
     ui->vl_settings_layout->addWidget(tab_settings);
@@ -54,7 +57,7 @@ MainWindow::MainWindow(QWidget *parent) :
     tab_stats->show();
     tab_settings->show();
 
-    connect(tab_settings, &Tab_Settings::languageChanged, [this]() { emit ui->retranslateUi(this); });
+    tab_settings->initLanguage();
 }
 
 void MainWindow::onTabButtonClicked(QPushButton *button, QLabel *label, int tabIndex)

@@ -1,81 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="oc_FR">
+<TS version="2.1" language="en_US">
 <context>
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.ui" line="32"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="273"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="275"/>
         <source>TLHoN_IC</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="102"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="275"/>
+        <location filename="../mainwindow.ui" line="105"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="277"/>
         <source>Снаряжение</source>
         <translation>Equipment</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="147"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="277"/>
+        <location filename="../mainwindow.ui" line="150"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="279"/>
         <source>Сумка</source>
         <translation>Inventory</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="192"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="279"/>
+        <location filename="../mainwindow.ui" line="195"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="281"/>
         <source>Хар-ки</source>
         <translation>Stats</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="240"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="281"/>
+        <location filename="../mainwindow.ui" line="243"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="283"/>
         <source>Настройки</source>
         <translation>Settings</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="285"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="283"/>
+        <location filename="../mainwindow.ui" line="288"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="285"/>
         <source>Помощь</source>
         <translation>About</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="355"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="284"/>
+        <location filename="../mainwindow.ui" line="358"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="286"/>
         <source>Equipment</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="365"/>
-        <location filename="../mainwindow.ui" line="377"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="285"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="286"/>
+        <location filename="../mainwindow.ui" line="368"/>
+        <location filename="../mainwindow.ui" line="380"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="287"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="288"/>
         <source>Inventory</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="383"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="287"/>
+        <location filename="../mainwindow.ui" line="386"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="289"/>
         <source>Stats</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="393"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="288"/>
+        <location filename="../mainwindow.ui" line="396"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="290"/>
         <source>Settings</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="403"/>
-        <location filename="../mainwindow.ui" line="415"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="289"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="290"/>
+        <location filename="../mainwindow.ui" line="406"/>
+        <location filename="../mainwindow.ui" line="418"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="291"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="292"/>
         <source>Help</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="421"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="291"/>
+        <location filename="../mainwindow.ui" line="424"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_mainwindow.h" line="293"/>
         <source>Selection</source>
         <translation></translation>
     </message>
@@ -99,18 +99,6 @@
         <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_equipment.h" line="381"/>
         <source>Физическая</source>
         <translation>Physical</translation>
-    </message>
-    <message>
-        <location filename="../tab_equipment.ui" line="580"/>
-        <location filename="../tab_equipment.ui" line="631"/>
-        <location filename="../tab_equipment.ui" line="676"/>
-        <location filename="../tab_equipment.ui" line="692"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_equipment.h" line="382"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_equipment.h" line="385"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_equipment.h" line="388"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_equipment.h" line="389"/>
-        <source>0%</source>
-        <translation></translation>
     </message>
     <message>
         <location filename="../tab_equipment.ui" line="596"/>
@@ -146,12 +134,6 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../tab_settings.ui" line="71"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_settings.h" line="132"/>
-        <source>0</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="../tab_settings.ui" line="81"/>
         <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_settings.h" line="133"/>
         <source>Макс. значков героя</source>
@@ -178,13 +160,13 @@
     <message>
         <location filename="../tab_settings.ui" line="147"/>
         <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_settings.h" line="138"/>
-        <source> English</source>
+        <source> Русский</source>
         <translation></translation>
     </message>
     <message>
         <location filename="../tab_settings.ui" line="152"/>
         <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_settings.h" line="139"/>
-        <source> Русский</source>
+        <source> English</source>
         <translation></translation>
     </message>
     <message>
@@ -203,12 +185,6 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../tab_stats.ui" line="68"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_stats.h" line="573"/>
-        <source>Nickname</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="../tab_stats.ui" line="96"/>
         <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_stats.h" line="574"/>
         <source>--&gt;</source>
@@ -221,58 +197,12 @@
         <translation>Class</translation>
     </message>
     <message>
-        <location filename="../tab_stats.ui" line="121"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_stats.h" line="576"/>
-        <source>NULL</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="../tab_stats.ui" line="131"/>
         <location filename="../tab_stats.ui" line="405"/>
         <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_stats.h" line="577"/>
         <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_stats.h" line="590"/>
         <source>Выносливость</source>
         <translation>Stamina</translation>
-    </message>
-    <message>
-        <location filename="../tab_stats.ui" line="138"/>
-        <location filename="../tab_stats.ui" line="158"/>
-        <location filename="../tab_stats.ui" line="232"/>
-        <location filename="../tab_stats.ui" line="273"/>
-        <location filename="../tab_stats.ui" line="494"/>
-        <location filename="../tab_stats.ui" line="510"/>
-        <location filename="../tab_stats.ui" line="526"/>
-        <location filename="../tab_stats.ui" line="542"/>
-        <location filename="../tab_stats.ui" line="558"/>
-        <location filename="../tab_stats.ui" line="574"/>
-        <location filename="../tab_stats.ui" line="590"/>
-        <location filename="../tab_stats.ui" line="674"/>
-        <location filename="../tab_stats.ui" line="690"/>
-        <location filename="../tab_stats.ui" line="706"/>
-        <location filename="../tab_stats.ui" line="722"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_stats.h" line="578"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_stats.h" line="580"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_stats.h" line="584"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_stats.h" line="586"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_stats.h" line="595"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_stats.h" line="596"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_stats.h" line="597"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_stats.h" line="598"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_stats.h" line="599"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_stats.h" line="600"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_stats.h" line="601"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_stats.h" line="607"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_stats.h" line="608"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_stats.h" line="609"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_stats.h" line="610"/>
-        <source>0</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../tab_stats.ui" line="148"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_stats.h" line="579"/>
-        <source>0/0</source>
-        <translation></translation>
     </message>
     <message>
         <location filename="../tab_stats.ui" line="168"/>
@@ -390,7 +320,7 @@
         <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_stats.h" line="616"/>
         <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_stats.h" line="620"/>
         <source>Если активировано, то нужно оформить всего один репост для достижения</source>
-        <translation>If activated, you will need to repost once to get the achievement</translation>
+        <translation>If activated, you will need to repost once to get the achievment</translation>
     </message>
     <message>
         <location filename="../tab_stats.ui" line="784"/>
@@ -487,8 +417,8 @@
     <message>
         <location filename="../tab_stats.ui" line="925"/>
         <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_IC_autogen/include/ui_tab_stats.h" line="654"/>
-        <source>Restore quests</source>
-        <translation>Reset quests</translation>
+        <source>Reset quests</source>
+        <translation></translation>
     </message>
 </context>
 </TS>

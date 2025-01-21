@@ -13,6 +13,7 @@ class Tab_Equipment : public QWidget
 
 public:
     explicit Tab_Equipment(QWidget *parent = nullptr);
+    void initSettings(class Tab_Settings *s);
     ~Tab_Equipment();
 
 private:
