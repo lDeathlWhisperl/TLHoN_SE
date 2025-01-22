@@ -35,5 +35,6 @@
         <file>Resources/StyleSheets/Tab_Settings.qss</file>
         <file>translations/TLHoN_IC_ru.qm</file>
         <file>translations/TLHoN_OC_en.qm</file>
+        <file>Resources/Images/Misc/Temp_note.png</file>
     </qresource>
 </RCC>

@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
-#include "tab_equipment.h"
+// #include "tab_equipment.h"
 #include "tab_stats.h"
 #include "tab_settings.h"
 
@@ -18,11 +18,11 @@ MainWindow::MainWindow(QWidget *parent) :
     QFontDatabase::addApplicationFont(":/Resources/Fonts/PressStart2P-Regular.ttf");
     setWindowIcon(QIcon(":/Resources/Images/Misc/icon.ico"));
 
-    tab_equipment = new Tab_Equipment(ui->Equipment);
+    // tab_equipment = new Tab_Equipment(ui->Equipment);
     tab_stats = new Tab_Stats(ui->Stats);
     tab_settings = new Tab_Settings(ui->Settings);
 
-    tab_equipment->initSettings(tab_settings);
+    // tab_equipment->initSettings(tab_settings);
     tab_stats->initSettings(tab_settings);
 
     ui->btn_equipment->setCheckable(true);
@@ -49,11 +49,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(tab_settings, &Tab_Settings::languageChanged, [this]() { emit ui->retranslateUi(this); });
 
-    ui->vl_equipment_layout->addWidget(tab_equipment);
+    // ui->vl_equipment_layout->addWidget(tab_equipment);
     ui->vl_stats_layout->addWidget(tab_stats);
     ui->vl_settings_layout->addWidget(tab_settings);
 
-    tab_equipment->show();
+    // tab_equipment->show();
     tab_stats->show();
     tab_settings->show();
 
@@ -84,7 +84,7 @@ MainWindow::~MainWindow()
     delete checked_btn;
     delete checked_label;
 
-    delete tab_equipment;
+    // delete tab_equipment;
     delete tab_stats;
     delete tab_settings;
 }

@@ -333,7 +333,7 @@
        <string notr="true"/>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>1</number>
       </property>
       <property name="tabBarAutoHide">
        <bool>false</bool>
@@ -352,7 +352,7 @@
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true"/>
+        <string notr="true">image: url(:/Resources/Images/Misc/Temp_note.png);</string>
        </property>
        <attribute name="title">
         <string>Equipment</string>
@@ -364,22 +364,12 @@
        </layout>
       </widget>
       <widget class="QWidget" name="Inventory">
+       <property name="styleSheet">
+        <string notr="true">image: url(:/Resources/Images/Misc/Temp_note.png);</string>
+       </property>
        <attribute name="title">
         <string>Inventory</string>
        </attribute>
-       <widget class="QLabel" name="label_2">
-        <property name="geometry">
-         <rect>
-          <x>220</x>
-          <y>180</y>
-          <width>211</width>
-          <height>71</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Inventory</string>
-        </property>
-       </widget>
       </widget>
       <widget class="QWidget" name="Stats">
        <attribute name="title">
