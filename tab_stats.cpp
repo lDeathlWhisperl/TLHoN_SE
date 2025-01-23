@@ -228,6 +228,7 @@ void Tab_Stats::initSettings(Tab_Settings *s)
 
 void Tab_Stats::le_textChanged(QString param, QString text)
 {
+    qInfo() << param << " = " << text;
     if(isBlockSignal) return;
 
     auto& json = JsonParser::getJson();
@@ -238,6 +239,7 @@ void Tab_Stats::le_textChanged(QString param, QString text)
 
 void Tab_Stats::setCheat(QString param, int value)
 {
+    qInfo() << param << " = " << value;
     if(isBlockSignal) return;
 
     auto& json = JsonParser::getJson();
@@ -259,7 +261,7 @@ void Tab_Stats::update()
 
     ui->l_class->setText(getClass(json[id]["playerClass"].toInt()));
     ui->l_level->setText(QString::number(json[id]["level"].toInt()));
-    ui->l_health->setText(QString::number(floor(json[id]["health"].toDouble())) + "/[NULL]");
+    ui->l_health->setText(QString::number(floor(json[id]["health"].toDouble())));
     ui->l_stamina->setText("[NULL]");
 
     ui->le_memory->setText(QString::number(json[id]["memory"].toInt()));
@@ -310,6 +312,7 @@ void Tab_Stats::on_btn_cheat_toggled(bool checked)
 
 void Tab_Stats::all_item_cheat(QCheckBox* cb, const QList<QString>& items, const QString& regex)
 {
+    qInfo() << "regex: " << regex;
     auto& json = JsonParser::getJson();
     QJsonArray inventory = json[id]["inventory"].toArray();
     QList<QString> copy = items;

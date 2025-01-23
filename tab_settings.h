@@ -22,6 +22,7 @@ public:
 private:
     void    saveSettings(const QString &key, const QString &value);
     QString loadSettings(const QString &key);
+    void loadGameSaves();
 
 signals:
     void characterChanged();

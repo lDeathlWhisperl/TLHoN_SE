@@ -19,11 +19,11 @@ public:
     JsonParser(JsonParser&) = delete;
     JsonParser(JsonParser&&) = delete;
 
-    static int init();
+    static void init();
 
     static QList<QJsonObject>& getJson();
 
-    static int write();
+    static void write();
 
     static void clear();
 };

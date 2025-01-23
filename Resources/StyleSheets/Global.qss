@@ -8,9 +8,10 @@ QLabel
 
 QTabWidget::pane { border: 5px dashed #fff; }
 
-QWidget#Equipment
+QWidget#Equipment,
+QWidget#Inventory
 {
-    background: url(:/Resources/Images/Misc/TinyPixelMan.png) no-repeat  center;
+    image: url(:/Resources/Images/Misc/Temp_note.png);
 }
 
 QPushButton#btn_equipment

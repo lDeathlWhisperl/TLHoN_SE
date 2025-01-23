@@ -7,7 +7,7 @@
 QList<QJsonObject> JsonParser::json;
 QList<QString> JsonParser::misc;
 
-int JsonParser::init()
+void JsonParser::init()
 {
     appdata = appdata.split("Roaming")[0];
 
@@ -15,8 +15,8 @@ int JsonParser::init()
 
     if(!file.exists())
     {
-        QMessageBox::critical(nullptr, "Critical", "Файл "  + appdata + path + " не был найден.");
-        return 1;
+        QMessageBox::critical(nullptr, "Critical", "File "  + appdata + path + " not found.");
+        qFatal() << "file not found";
     }
 
     file.open(QIODevice::ReadOnly | QIODevice::Text);
@@ -24,8 +24,8 @@ int JsonParser::init()
 
     if(st.isEmpty())
     {
-        QMessageBox::critical(nullptr, "Critical", "Файл сохранения пуст. Восстановите его вручную");
-        return 2;
+        QMessageBox::critical(nullptr, "Critical", "File is empty. Recover it manually");
+        qFatal() << "File is empty";
     }
 
     file.close();
@@ -35,27 +35,33 @@ int JsonParser::init()
     misc = {data[0]};
     data.pop_front();
 
-    for(QString& str : data)
+    try
     {
-        QJsonParseError err;
-
-        QString chunk = str;
-        str = chunk.split(';')[0];
-        misc.push_back(chunk.section(';', 1));
-
-        QJsonDocument doc = QJsonDocument::fromJson(str.toUtf8(), &err);
-
-        if(doc.isNull())
+        for(QString& str : data)
         {
-            qDebug() << "Error: " << err.errorString();
-            QMessageBox::critical(nullptr, "Critical", "Ошибка парсинга. Возможно, файл сохранения поврежден. Восстановите его вручную");
-            return 3;
+            QJsonParseError err;
+
+            QString chunk = str;
+            str = chunk.split(';')[0];
+            misc.push_back(chunk.section(';', 1));
+
+            QJsonDocument doc = QJsonDocument::fromJson(str.toUtf8(), &err);
+
+            if(doc.isNull())
+            {
+                qDebug() << " QJsonDocument error: " << err.errorString();
+                QMessageBox::critical(nullptr, "Critical", "Parsing error. The save file may be corrupted. Please recover it manually.");
+            }
+            json.push_back(doc.object());
         }
-        json.push_back(doc.object());
+    }
+    catch (std::exception& e)
+    {
+        qFatal() << e.what();
+        QMessageBox::critical(nullptr, "Critical", "Something went wrong :(");
     }
 
     if(!QFile::exists(appdata + path + "_bckp")) QFile::copy(appdata + path, appdata + path + "_bckp");
-    return 0;
 }
 
 QList<QJsonObject>& JsonParser::getJson()
@@ -63,14 +69,14 @@ QList<QJsonObject>& JsonParser::getJson()
     return json;
 }
 
-int JsonParser::write()
+void JsonParser::write()
 {
     QFile file(appdata + path);
 
     if(!file.exists())
     {
-        QMessageBox::critical(nullptr, "Critical", "Файл "  + appdata + path + " не был найден.");
-        return 1;
+        QMessageBox::critical(nullptr, "Critical", "File "  + appdata + path + " not found.");
+        qFatal() << "file not found";
     }
 
     file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Append | QIODevice::Truncate);
@@ -78,14 +84,20 @@ int JsonParser::write()
     file.write(misc[0].toUtf8());
     file.write("~SettingsSplit~");
 
-    for(size_t i = 0; i < json.size(); ++i)
+    try
     {
-        file.write(QJsonDocument(json[i]).toJson() + ";");
-        file.write(misc[i+1].toUtf8());
-        if(i != json.size() - 1) file.write("~NoticeMeSenpaiNoticeMe~");
+        for(size_t i = 0; i < json.size(); ++i)
+        {
+            file.write(QJsonDocument(json[i]).toJson() + ";");
+            file.write(misc[i+1].toUtf8());
+            if(i != json.size() - 1) file.write("~NoticeMeSenpaiNoticeMe~");
+        }
     }
-
-    return 0;
+    catch (std::exception& e)
+    {
+        qFatal() << e.what();
+        QMessageBox::critical(nullptr, "Critical", "Something went wrong :(");
+    }
 }
 
 void JsonParser::clear()

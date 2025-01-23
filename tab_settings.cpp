@@ -18,9 +18,14 @@ Tab_Settings::Tab_Settings(QWidget *parent)
     ui->setupUi(this);
 
     setStyleFromFile(this, ":/Resources/StyleSheets/Tab_Settings.qss");
+    loadGameSaves();
+}
 
-    auto json = JsonParser::getJson();
-    for(auto& obj : JsonParser::getJson())
+void Tab_Settings::loadGameSaves()
+{
+    ui->cb_saves->clear();
+    auto& json = JsonParser::getJson();
+    for(const auto& obj : JsonParser::getJson())
         ui->cb_saves->addItem(" " + obj["name"].toString());
 }
 
@@ -36,9 +41,13 @@ QString Tab_Settings::getLanguage()
 
 void Tab_Settings::initLanguage()
 {
-    on_cb_language_currentIndexChanged(loadSettings("language").toInt());
+    int language_index = loadSettings("language").toInt();
+    //Load language
+    on_cb_language_currentIndexChanged(language_index);
+
+    //Set language in combo box
     ui->cb_language->blockSignals(true);
-    ui->cb_language->setCurrentIndex(loadSettings("language").toInt());
+    ui->cb_language->setCurrentIndex(language_index);
     ui->cb_language->blockSignals(false);
 }
 
@@ -50,6 +59,8 @@ Tab_Settings::~Tab_Settings()
 void Tab_Settings::on_cb_saves_currentIndexChanged(int index)
 {
     auto& json = JsonParser::getJson();
+
+    if(index < 0) index = 0;
     characterId = index;
 
     ui->le_maxIconUses->blockSignals(true);
@@ -61,6 +72,7 @@ void Tab_Settings::on_cb_saves_currentIndexChanged(int index)
 
 void Tab_Settings::on_btn_restore_clicked()
 {
+    qInfo() << "Backup file";
     QString appdata = QProcessEnvironment::systemEnvironment().value("AppData");
     QString path = "\\..\\LocalLow\\OverTheMoon\\TLHON\\SaveData.txt";
 
@@ -70,12 +82,15 @@ void Tab_Settings::on_btn_restore_clicked()
 
     JsonParser::clear();
     JsonParser::init();
+    loadGameSaves();
 
     emit saveRestored();
 }
 
 void Tab_Settings::on_cb_cheater_toggled(bool checked)
 {
+    qInfo() << "Cheat mode: " << checked;
+    //Look at "bossFightAssistances"
     emit modeToggled(checked);
 }
 
@@ -99,13 +114,13 @@ void Tab_Settings::on_le_maxIconUses_editingFinished()
 
 void Tab_Settings::on_cb_language_currentIndexChanged(int index)
 {
+    qInfo() << "Changing language";
     qApp->removeTranslator(&translator);
     QString file;
 
     switch (index)
     {
     case 1:
-        file = ":/translations/TLHoN_OC_ru.qm";
         language = "ru";
         break;
     default:
@@ -116,7 +131,7 @@ void Tab_Settings::on_cb_language_currentIndexChanged(int index)
 
     saveSettings("Language", QString::number(index));
 
-    if(translator.load(file))
+    if(translator.load(file) && !file.isEmpty())
         qApp->installTranslator(&translator);
 
     emit ui->retranslateUi(this);

@@ -352,7 +352,7 @@
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">image: url(:/Resources/Images/Misc/Temp_note.png);</string>
+        <string notr="true"/>
        </property>
        <attribute name="title">
         <string>Equipment</string>
@@ -365,7 +365,7 @@
       </widget>
       <widget class="QWidget" name="Inventory">
        <property name="styleSheet">
-        <string notr="true">image: url(:/Resources/Images/Misc/Temp_note.png);</string>
+        <string notr="true"/>
        </property>
        <attribute name="title">
         <string>Inventory</string>
