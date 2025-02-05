@@ -29,7 +29,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string notr="true">Form</string>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -658,7 +658,7 @@
                 </size>
                </property>
                <property name="text">
-                <string>DLC</string>
+                <string notr="true">DLC</string>
                </property>
               </widget>
              </item>
@@ -758,7 +758,7 @@
       </widget>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="vl_cheat_layout" stretch="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0">
+      <layout class="QVBoxLayout" name="vl_cheat_layout" stretch="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0">
        <item>
         <widget class="QCheckBox" name="cb_backstabs">
          <property name="toolTip">
@@ -768,7 +768,7 @@
           <enum>Qt::LayoutDirection::RightToLeft</enum>
          </property>
          <property name="text">
-          <string>BackStabs</string>
+          <string notr="true">BackStabs</string>
          </property>
         </widget>
        </item>
@@ -781,7 +781,7 @@
           <enum>Qt::LayoutDirection::RightToLeft</enum>
          </property>
          <property name="text">
-          <string>Resposts</string>
+          <string notr="true">Resposts</string>
          </property>
         </widget>
        </item>
@@ -794,7 +794,7 @@
           <enum>Qt::LayoutDirection::RightToLeft</enum>
          </property>
          <property name="text">
-          <string>Rebuffs</string>
+          <string notr="true">Rebuffs</string>
          </property>
         </widget>
        </item>
@@ -814,7 +814,7 @@
           <enum>Qt::LayoutDirection::RightToLeft</enum>
          </property>
          <property name="text">
-          <string>Remembered</string>
+          <string notr="true">Remembered</string>
          </property>
         </widget>
        </item>
@@ -827,7 +827,7 @@
           <enum>Qt::LayoutDirection::RightToLeft</enum>
          </property>
          <property name="text">
-          <string>Unburdened</string>
+          <string notr="true">Unburdened</string>
          </property>
         </widget>
        </item>
@@ -840,7 +840,7 @@
           <enum>Qt::LayoutDirection::RightToLeft</enum>
          </property>
          <property name="text">
-          <string>DLC</string>
+          <string notr="true">DLC</string>
          </property>
         </widget>
        </item>
@@ -860,7 +860,7 @@
           <enum>Qt::LayoutDirection::RightToLeft</enum>
          </property>
          <property name="text">
-          <string>All armor</string>
+          <string notr="true">All armor</string>
          </property>
         </widget>
        </item>
@@ -876,7 +876,7 @@
           <enum>Qt::LayoutDirection::RightToLeft</enum>
          </property>
          <property name="text">
-          <string>All weapon</string>
+          <string notr="true">All weapon</string>
          </property>
         </widget>
        </item>
@@ -889,7 +889,7 @@
           <enum>Qt::LayoutDirection::RightToLeft</enum>
          </property>
          <property name="text">
-          <string>All spell</string>
+          <string notr="true">All spell</string>
          </property>
         </widget>
        </item>
@@ -902,7 +902,7 @@
           <enum>Qt::LayoutDirection::RightToLeft</enum>
          </property>
          <property name="text">
-          <string>All rune</string>
+          <string notr="true">All rune</string>
          </property>
         </widget>
        </item>
@@ -922,7 +922,20 @@
           <enum>Qt::LayoutDirection::RightToLeft</enum>
          </property>
          <property name="text">
-          <string>Reset quests</string>
+          <string notr="true">Reset quests</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="cb_help">
+         <property name="toolTip">
+          <string>Вам никто не помогал в убийстве боссов ;)</string>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LayoutDirection::RightToLeft</enum>
+         </property>
+         <property name="text">
+          <string notr="true">Help</string>
          </property>
         </widget>
        </item>

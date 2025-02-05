@@ -114,7 +114,6 @@ void Tab_Settings::on_le_maxIconUses_editingFinished()
 
 void Tab_Settings::on_cb_language_currentIndexChanged(int index)
 {
-    qInfo() << "Changing language";
     qApp->removeTranslator(&translator);
     QString file;
 
@@ -124,7 +123,7 @@ void Tab_Settings::on_cb_language_currentIndexChanged(int index)
         language = "ru";
         break;
     default:
-        file = ":/translations/TLHoN_OC_en.qm";
+        file = ":/translations/TLHoN_IC_en.qm";
         language = "en";
         break;
     }
@@ -134,6 +133,7 @@ void Tab_Settings::on_cb_language_currentIndexChanged(int index)
     if(translator.load(file) && !file.isEmpty())
         qApp->installTranslator(&translator);
 
+    qInfo() << "Changing language to [" << language <<']';
     emit ui->retranslateUi(this);
     emit languageChanged();
 

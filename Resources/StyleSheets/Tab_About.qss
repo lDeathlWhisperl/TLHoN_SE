@@ -1,0 +1,67 @@
+QLabel
+{
+	font-size: 12pt;
+}
+
+QLabel#label
+{
+	font-size: 16pt;
+}
+
+QPushButton
+{
+    font: 11px 'Press Start 2P';
+}
+
+QPushButton#btn_github
+{
+	background-color: rgb(16, 0, 0);
+	color: #fff;
+}
+QPushButton#btn_github::hover
+{
+	background-color: rgb(26, 10, 10);
+}
+
+QPushButton#btn_steam
+{
+	background-color: rgb(23, 26, 33);
+	color: #fff;
+}
+QPushButton#btn_steam::hover
+{
+	background-color: rgb(33, 36, 43);
+}
+
+QPushButton#btn_guide
+{
+	background-color: rgb(23, 26, 33);
+	color: #fff;
+}
+QPushButton#btn_guide::hover
+{
+	background-color: rgb(33, 36, 43);
+}
+
+QPushButton#btn_game
+{
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(117, 176, 34, 255), stop:1 rgba(88, 138, 27, 255));
+	color: #fff;
+	border: 3px solid #000;
+}
+QPushButton#btn_game::hover
+{
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(142, 214, 41, 255), stop:1 rgba(106, 166, 33, 255));
+}
+
+QPushButton#btn_report
+{
+    font: 16px 'Press Start 2P';
+    color: #fff;
+	background-color: #000;
+	border: 5px solid #fff;
+}
+QPushButton#btn_report::hover
+{
+	border: 5px solid rgb(228, 221, 9);
+}

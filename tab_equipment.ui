@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string notr="true">Form</string>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -577,7 +577,7 @@
           </size>
          </property>
          <property name="text">
-          <string>0%</string>
+          <string notr="true">0%</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -628,7 +628,7 @@
           </size>
          </property>
          <property name="text">
-          <string>0%</string>
+          <string notr="true">0%</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -673,7 +673,7 @@
           </size>
          </property>
          <property name="text">
-          <string>0%</string>
+          <string notr="true">0%</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -689,7 +689,7 @@
           </size>
          </property>
          <property name="text">
-          <string>0%</string>
+          <string notr="true">0%</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>

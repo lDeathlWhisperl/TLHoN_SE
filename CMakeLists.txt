@@ -30,6 +30,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         tab_stats.cpp tab_stats.h tab_stats.ui
         tab_equipment.h tab_equipment.cpp tab_equipment.ui
         tab_settings.h tab_settings.cpp tab_settings.ui
+        tab_about.h tab_about.cpp tab_about.ui
 
     )
 # Define target properties for Android with Qt 6 as:

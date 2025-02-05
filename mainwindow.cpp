@@ -4,6 +4,7 @@
 // #include "tab_equipment.h"
 #include "tab_stats.h"
 #include "tab_settings.h"
+#include "tab_about.h"
 
 #include <QTabBar>
 #include <QFontDatabase>
@@ -14,16 +15,18 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->tabWidget->tabBar()->hide();
-    ui->tabWidget->setCurrentIndex(0);
+    ui->tabWidget->setCurrentIndex(4);
     QFontDatabase::addApplicationFont(":/Resources/Fonts/PressStart2P-Regular.ttf");
     setWindowIcon(QIcon(":/Resources/Images/Misc/icon.ico"));
 
     // tab_equipment = new Tab_Equipment(ui->Equipment);
-    tab_stats = new Tab_Stats(ui->Stats);
-    tab_settings = new Tab_Settings(ui->Settings);
+    tab_stats = new Tab_Stats();
+    tab_settings = new Tab_Settings();
+    tab_about = new Tab_About();
 
     // tab_equipment->initSettings(tab_settings);
     tab_stats->initSettings(tab_settings);
+    tab_about->initSettings(tab_settings);
 
     ui->btn_equipment->setCheckable(true);
     ui->btn_inventory->setCheckable(true);
@@ -31,15 +34,15 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->btn_settings->setCheckable(true);
     ui->btn_help->setCheckable(true);
 
-    ui->l_equipment->setVisible(true);
+    ui->l_equipment->setVisible(false);
     ui->l_inventory->setVisible(false);
     ui->l_stats->setVisible(false);
     ui->l_settings->setVisible(false);
-    ui->l_help->setVisible(false);
+    ui->l_help->setVisible(true);
 
-    checked_btn = ui->btn_equipment;
-    checked_label = ui->l_equipment;
-    ui->btn_equipment->setChecked(true);
+    checked_btn = ui->btn_help;
+    checked_label = ui->l_help;
+    ui->btn_help->setChecked(true);
 
     connect(ui->btn_equipment, &QPushButton::toggled, [this]() { onTabButtonClicked(ui->btn_equipment, ui->l_equipment, 0); });
     connect(ui->btn_inventory, &QPushButton::toggled, [this]() { onTabButtonClicked(ui->btn_inventory, ui->l_inventory, 1); });
@@ -52,10 +55,7 @@ MainWindow::MainWindow(QWidget *parent) :
     // ui->vl_equipment_layout->addWidget(tab_equipment);
     ui->vl_stats_layout->addWidget(tab_stats);
     ui->vl_settings_layout->addWidget(tab_settings);
-
-    // tab_equipment->show();
-    tab_stats->show();
-    tab_settings->show();
+    ui->vl_about_layout->addWidget(tab_about);
 
     tab_settings->initLanguage();
 }
@@ -87,5 +87,6 @@ MainWindow::~MainWindow()
     // delete tab_equipment;
     delete tab_stats;
     delete tab_settings;
+    delete tab_about;
 }
 

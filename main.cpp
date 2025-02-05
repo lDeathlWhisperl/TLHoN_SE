@@ -31,6 +31,8 @@ void messageHandler(QtMsgType type, const QMessageLogContext &context, const QSt
     case QtFatalMsg:
         fprintf(stderr, "Fatal: %s\n", logMessage.toLocal8Bit().constData());
         abort();
+    case QtInfoMsg:
+        break;
     }
 }
 
