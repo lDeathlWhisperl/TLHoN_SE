@@ -16,21 +16,25 @@ enum
 
 QString getClass(int c)
 {
-    QMap<int, QMap<QString, QString>> classes;
-
-    classes[DATADIN]      ["ru"] = "Инфорыцарь";
-    classes[FORMATTER]    ["ru"] = "Форматировщик";
-    classes[RESOLUTIONARY]["ru"] = "Разбойник";
-    classes[SOURCERER]    ["ru"] = "Чарокодер";
-    classes[RANDOMASTER]  ["ru"] = "Рандомастер";
-
-    classes[DATADIN]      ["en"] = "DATADIN";
-    classes[FORMATTER]    ["en"] = "FORMATTER";
-    classes[RESOLUTIONARY]["en"] = "RESOLUTIONARY";
-    classes[SOURCERER]    ["en"] = "SOURCERER";
-    classes[RANDOMASTER]  ["en"] = "RANDOMASTER";
-
-    return classes[c][Tab_Settings::getLanguage()];
+    switch(c)
+    {
+    case DATADIN:
+        return QObject::tr("Инфорыцарь");
+        break;
+    case FORMATTER:
+        return QObject::tr("Форматировщик");
+        break;
+    case RESOLUTIONARY:
+        return QObject::tr("Разбойник");
+        break;
+    case SOURCERER:
+        return QObject::tr("Чарокодер");
+        break;
+    case RANDOMASTER:
+    default:
+        return QObject::tr("Рандомастер");
+        break;
+    }
 }
 
 void disableIfCompleted(QCheckBox* cb, int value, int cond)

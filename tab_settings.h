@@ -15,7 +15,6 @@ class Tab_Settings : public QWidget
 public:
     explicit Tab_Settings(QWidget *parent = nullptr);
     static int getCharacterId();
-    static QString getLanguage();
     void initLanguage();
     ~Tab_Settings();
 

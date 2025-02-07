@@ -34,11 +34,6 @@ int Tab_Settings::getCharacterId()
     return characterId;
 }
 
-QString Tab_Settings::getLanguage()
-{
-    return language;
-}
-
 void Tab_Settings::initLanguage()
 {
     int language_index = loadSettings("language").toInt();
@@ -123,7 +118,7 @@ void Tab_Settings::on_cb_language_currentIndexChanged(int index)
         language = "ru";
         break;
     default:
-        file = ":/translations/TLHoN_IC_en.qm";
+        file = ":/translations/TLHoN_SE_en.qm";
         language = "en";
         break;
     }
@@ -142,12 +137,12 @@ void Tab_Settings::on_cb_language_currentIndexChanged(int index)
 
 void Tab_Settings::saveSettings(const QString &key, const QString &value)
 {
-    QSettings settings("DeathWhisper", "TLHoN_IC");
+    QSettings settings("DeathWhisper", "TLHoN_SE");
     settings.setValue(key, value);
 }
 
 QString Tab_Settings::loadSettings(const QString &key)
 {
-    QSettings settings("DeathWhisper", "TLHoN_IC");
+    QSettings settings("DeathWhisper", "TLHoN_SE");
     return settings.value(key).toString();
 }

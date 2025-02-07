@@ -15,7 +15,7 @@ void JsonParser::init()
 
     if(!file.exists())
     {
-        QMessageBox::critical(nullptr, "Critical", "File "  + appdata + path + " not found.");
+        QMessageBox::critical(nullptr, "Critical", QObject::tr("Файл ")  + appdata + path + QObject::tr(" не найден."));
         qFatal() << "file not found";
     }
 
@@ -24,7 +24,7 @@ void JsonParser::init()
 
     if(st.isEmpty())
     {
-        QMessageBox::critical(nullptr, "Critical", "File is empty. Recover it manually");
+        QMessageBox::critical(nullptr, "Critical", QObject::tr("Файл пуст. Восстановите его вручную."));
         qFatal() << "File is empty";
     }
 
@@ -49,8 +49,9 @@ void JsonParser::init()
 
             if(doc.isNull())
             {
+                //Parsing error. The save file may be corrupted. Please recover it manually.
                 qDebug() << " QJsonDocument error: " << err.errorString();
-                QMessageBox::critical(nullptr, "Critical", "Parsing error. The save file may be corrupted. Please recover it manually.");
+                QMessageBox::critical(nullptr, "Critical", QObject::tr("Ошибка парсинга. Файл сохранения может быть поврежден. Пожалуйста, восстановите его вручную."));
             }
             json.push_back(doc.object());
         }
@@ -58,7 +59,8 @@ void JsonParser::init()
     catch (std::exception& e)
     {
         qFatal() << e.what();
-        QMessageBox::critical(nullptr, "Critical", "Something went wrong :(");
+        //Something went wrong
+        QMessageBox::critical(nullptr, "Critical", QObject::tr("Что-то пошло не так :("));
     }
 
     if(!QFile::exists(appdata + path + "_bckp")) QFile::copy(appdata + path, appdata + path + "_bckp");
@@ -75,7 +77,7 @@ void JsonParser::write()
 
     if(!file.exists())
     {
-        QMessageBox::critical(nullptr, "Critical", "File "  + appdata + path + " not found.");
+        QMessageBox::critical(nullptr, "Critical", QObject::tr("Файл ")  + appdata + path + QObject::tr(" не найден."));
         qFatal() << "file not found";
     }
 
@@ -96,7 +98,7 @@ void JsonParser::write()
     catch (std::exception& e)
     {
         qFatal() << e.what();
-        QMessageBox::critical(nullptr, "Critical", "Something went wrong :(");
+        QMessageBox::critical(nullptr, "Critical", QObject::tr("Что-то пошло не так :("));
     }
 }
 
