@@ -4,7 +4,9 @@
 #include <QRegularExpression>
 #include <QMessageBox>
 
-QList<QJsonObject> JsonParser::json;
+QList<QJsonObject> JsonParser::characterJson;
+QList<QJsonObject> JsonParser::infoJson;
+QList<QJsonObject> JsonParser::questJson;
 QList<QString> JsonParser::misc;
 
 void JsonParser::init()
@@ -37,38 +39,59 @@ void JsonParser::init()
 
     try
     {
-        for(QString& str : data)
+        for(QString& ch_data : data)
         {
-            QJsonParseError err;
+            QJsonParseError data_err;
+            QJsonParseError info_err;
+            QJsonParseError quests_err;
 
-            QString chunk = str;
-            str = chunk.split(';')[0];
-            misc.push_back(chunk.section(';', 1));
+            QString chunk = ch_data;
+            QString ch_quests;
+            QString ch_info;
 
-            QJsonDocument doc = QJsonDocument::fromJson(str.toUtf8(), &err);
+            ch_data   = chunk.split(';')[0];
+            ch_info   = chunk.split(';')[1];
+            ch_quests = chunk.split(';')[2];
 
-            if(doc.isNull())
+            misc.push_back(chunk.section(';', 3));
+
+            QJsonDocument ch_doc = QJsonDocument::fromJson(ch_data.toUtf8(), &data_err);
+            QJsonDocument in_doc = QJsonDocument::fromJson(ch_info.toUtf8(), &info_err);
+            QJsonDocument qu_doc = QJsonDocument::fromJson(ch_quests.toUtf8(), &quests_err);
+
+            if(ch_doc.isNull())
             {
-                //Parsing error. The save file may be corrupted. Please recover it manually.
-                qDebug() << " QJsonDocument error: " << err.errorString();
+                qDebug() << " QJsonDocument error: " << data_err.errorString() << info_err.errorString() << quests_err.errorString();
                 QMessageBox::critical(nullptr, "Critical", QObject::tr("Ошибка парсинга. Файл сохранения может быть поврежден. Пожалуйста, восстановите его вручную."));
             }
-            json.push_back(doc.object());
+
+            characterJson.push_back(ch_doc.object());
+            infoJson.push_back(in_doc.object());
+            questJson.push_back(qu_doc.object());
         }
     }
     catch (std::exception& e)
     {
         qFatal() << e.what();
-        //Something went wrong
         QMessageBox::critical(nullptr, "Critical", QObject::tr("Что-то пошло не так :("));
     }
 
     if(!QFile::exists(appdata + path + "_bckp")) QFile::copy(appdata + path, appdata + path + "_bckp");
 }
 
-QList<QJsonObject>& JsonParser::getJson()
+QList<QJsonObject>& JsonParser::getCharacterJson()
 {
-    return json;
+    return characterJson;
+}
+
+QList<QJsonObject> &JsonParser::getInfoJson()
+{
+    return infoJson;
+}
+
+QList<QJsonObject> &JsonParser::getQuestJson()
+{
+    return questJson;
 }
 
 void JsonParser::write()
@@ -88,11 +111,13 @@ void JsonParser::write()
 
     try
     {
-        for(size_t i = 0; i < json.size(); ++i)
+        for(size_t i = 0; i < characterJson.size(); ++i)
         {
-            file.write(QJsonDocument(json[i]).toJson() + ";");
+            file.write(QJsonDocument(characterJson[i]).toJson() + ";");
+            file.write(QJsonDocument(infoJson[i]).toJson()  + ";");
+            file.write(QJsonDocument(questJson[i]).toJson() + ";");
             file.write(misc[i+1].toUtf8());
-            if(i != json.size() - 1) file.write("~NoticeMeSenpaiNoticeMe~");
+            if(i != characterJson.size() - 1) file.write("~NoticeMeSenpaiNoticeMe~");
         }
     }
     catch (std::exception& e)
@@ -104,6 +129,6 @@ void JsonParser::write()
 
 void JsonParser::clear()
 {
-    json.clear();
+    characterJson.clear();
     misc.clear();
 }

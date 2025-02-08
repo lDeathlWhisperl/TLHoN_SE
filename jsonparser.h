@@ -9,7 +9,9 @@
 
 class JsonParser
 {
-    static QList<QJsonObject> json;
+    static QList<QJsonObject> characterJson;
+    static QList<QJsonObject> infoJson;
+    static QList<QJsonObject> questJson;
     static QList<QString> misc;
     static inline QString appdata = QProcessEnvironment::systemEnvironment().value("AppData");
     static const inline QString path = "LocalLow\\OverTheMoon\\TLHON\\SaveData.txt";
@@ -21,7 +23,9 @@ public:
 
     static void init();
 
-    static QList<QJsonObject>& getJson();
+    static QList<QJsonObject>& getCharacterJson();
+    static QList<QJsonObject>& getInfoJson();
+    static QList<QJsonObject>& getQuestJson();
 
     static void write();
 
