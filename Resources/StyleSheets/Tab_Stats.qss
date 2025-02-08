@@ -78,3 +78,14 @@ QCheckBox::indicator::checked
 {
 	background: #000 url(:/Resources/Images/Misc/Cross.png) center;
 }
+
+QCheckBox::indicator#cb_all_weapon,
+QCheckBox::indicator#cb_all_armor
+{
+	border: 5px solid rgb(80, 80, 80);
+}
+QCheckBox#cb_all_weapon,
+QCheckBox#cb_all_armor
+{
+	text-decoration: line-through;
+}

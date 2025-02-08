@@ -38,7 +38,7 @@ void messageHandler(QtMsgType type, const QMessageLogContext &context, const QSt
 
 int main(int argc, char *argv[])
 {
-    // qInstallMessageHandler(messageHandler);
+    qInstallMessageHandler(messageHandler);
     qInfo() << "Started new session";
     QApplication a(argc, argv);
 

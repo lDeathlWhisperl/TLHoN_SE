@@ -73,98 +73,108 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../jsonparser.cpp" line="18"/>
-        <location filename="../jsonparser.cpp" line="80"/>
+        <location filename="../jsonparser.cpp" line="20"/>
+        <location filename="../jsonparser.cpp" line="103"/>
         <source>Файл </source>
         <translation>File </translation>
     </message>
     <message>
-        <location filename="../jsonparser.cpp" line="18"/>
-        <location filename="../jsonparser.cpp" line="80"/>
+        <location filename="../jsonparser.cpp" line="20"/>
+        <location filename="../jsonparser.cpp" line="103"/>
         <source> не найден.</source>
         <translation> not found.</translation>
     </message>
     <message>
-        <location filename="../jsonparser.cpp" line="27"/>
+        <location filename="../jsonparser.cpp" line="29"/>
         <source>Файл пуст. Восстановите его вручную.</source>
         <translation>File is empty. Recover it manually.</translation>
     </message>
     <message>
-        <location filename="../jsonparser.cpp" line="54"/>
+        <location filename="../jsonparser.cpp" line="65"/>
         <source>Ошибка парсинга. Файл сохранения может быть поврежден. Пожалуйста, восстановите его вручную.</source>
         <translation>Parsing error. The save file may be corrupted. Please recover it manually.</translation>
     </message>
     <message>
-        <location filename="../jsonparser.cpp" line="63"/>
-        <location filename="../jsonparser.cpp" line="101"/>
+        <location filename="../jsonparser.cpp" line="76"/>
+        <location filename="../jsonparser.cpp" line="126"/>
         <source>Что-то пошло не так :(</source>
         <translation>Something went wrong :(</translation>
     </message>
     <message>
-        <location filename="../tab_stats.cpp" line="22"/>
+        <location filename="../tab_stats.cpp" line="24"/>
         <source>Инфорыцарь</source>
         <translation>Datadin</translation>
     </message>
     <message>
-        <location filename="../tab_stats.cpp" line="25"/>
+        <location filename="../tab_stats.cpp" line="27"/>
         <source>Форматировщик</source>
         <translation>Formatter</translation>
     </message>
     <message>
-        <location filename="../tab_stats.cpp" line="28"/>
+        <location filename="../tab_stats.cpp" line="30"/>
         <source>Разбойник</source>
         <translation>Resolutionary</translation>
     </message>
     <message>
-        <location filename="../tab_stats.cpp" line="31"/>
+        <location filename="../tab_stats.cpp" line="33"/>
         <source>Чарокодер</source>
         <translation>Sourcerer</translation>
     </message>
     <message>
-        <location filename="../tab_stats.cpp" line="35"/>
+        <location filename="../tab_stats.cpp" line="37"/>
         <source>Рандомастер</source>
         <translation>Randomaster</translation>
+    </message>
+    <message>
+        <location filename="../tab_stats.cpp" line="348"/>
+        <source>Ты пытался...</source>
+        <translation>You tried...</translation>
+    </message>
+    <message>
+        <location filename="../tab_stats.cpp" line="348"/>
+        <source>У вас уже есть эти предметы.</source>
+        <translation>You already have these items</translation>
     </message>
 </context>
 <context>
     <name>Tab_About</name>
     <message>
-        <location filename="../tab_about.ui" line="32"/>
+        <location filename="../tab_about.ui" line="42"/>
         <source>Привет! Благодарю тебя за использование моей программы. Надеюсь, она принесет только положительный опыт. Данный проект не ставит своей целью навредить пользователю или автору оригинальной игры. Настоятельно рекомендую создать резервную копию файла сохранения, чтобы избежать возможных проблем. Оставляйте свои отзывы и предложения в комментариях к руководству в Steam. Если вы наткнулись на неисправность, пожалуйста, нажмите на кнопку внизу этой вкладки.</source>
         <translation>Hi! Thank you for using my program. I hope it brings you only a positive experience. This project is not intended to harm the user or the original game developer. I highly recommend creating a backup copy of your save file to avoid possible problems. Please leave your feedback and suggestions in the comments on my Steam guide. If you encounter any issues, please click the button below to report them.</translation>
     </message>
     <message>
-        <location filename="../tab_about.ui" line="65"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_about.h" line="154"/>
+        <location filename="../tab_about.ui" line="78"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_about.h" line="163"/>
         <source>Связь со мной:</source>
         <translation>Connect with me:</translation>
     </message>
     <message>
-        <location filename="../tab_about.ui" line="109"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_about.h" line="155"/>
+        <location filename="../tab_about.ui" line="122"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_about.h" line="164"/>
         <source> Руководство </source>
         <translation>Guide</translation>
     </message>
     <message>
-        <location filename="../tab_about.ui" line="141"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_about.h" line="156"/>
+        <location filename="../tab_about.ui" line="154"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_about.h" line="165"/>
         <source>Страница игры:</source>
         <translation>Game page:</translation>
     </message>
     <message>
-        <location filename="../tab_about.ui" line="157"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_about.h" line="157"/>
+        <location filename="../tab_about.ui" line="170"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_about.h" line="166"/>
         <source> Магазин </source>
         <translation> Store </translation>
     </message>
     <message>
-        <location filename="../tab_about.ui" line="181"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_about.h" line="158"/>
+        <location filename="../tab_about.ui" line="194"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_about.h" line="167"/>
         <source> Сообщить об ошибке </source>
         <translation> Report a bug </translation>
     </message>
     <message>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_about.h" line="150"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_about.h" line="159"/>
         <source>Привет! Благодарю тебя за использование моей программы. Надеюсь, она принесет только положительный опыт. Данный проект не ставит своей целью навреди��ь пользователю или автору оригинальной игры. Настоятельно рекомендую создать резервную копию файла сохранения, чтобы избежать возможных проблем. ��ставляйте свои отзывы и предложения в комментариях к руководству в Steam. Если вы наткнулись на неисправность, пожалуйста, нажмите на кнопку внизу этой вкладки.</source>
         <translation></translation>
     </message>
@@ -251,175 +261,175 @@
     <name>Tab_stats</name>
     <message>
         <location filename="../tab_stats.ui" line="96"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="594"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="613"/>
         <source>--&gt;</source>
         <translation></translation>
     </message>
     <message>
         <location filename="../tab_stats.ui" line="114"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="595"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="614"/>
         <source>Класс</source>
         <translation>Class</translation>
     </message>
     <message>
         <location filename="../tab_stats.ui" line="131"/>
         <location filename="../tab_stats.ui" line="405"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="597"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="610"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="615"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="623"/>
         <source>Выносливость</source>
         <translation>Stamina</translation>
     </message>
     <message>
         <location filename="../tab_stats.ui" line="168"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="601"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="616"/>
         <source>Уровень</source>
         <translation>Level</translation>
     </message>
     <message>
         <location filename="../tab_stats.ui" line="175"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="602"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="617"/>
         <source>Здоровье</source>
         <translation>Health</translation>
     </message>
     <message>
         <location filename="../tab_stats.ui" line="216"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="603"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="618"/>
         <source>Требуется</source>
         <translation>Required</translation>
     </message>
     <message>
         <location filename="../tab_stats.ui" line="257"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="605"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="619"/>
         <source>Память</source>
         <translation>Memory</translation>
     </message>
     <message>
         <location filename="../tab_stats.ui" line="337"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="607"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="620"/>
         <source>Хар-ки</source>
         <translation>Stats</translation>
     </message>
     <message>
         <location filename="../tab_stats.ui" line="367"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="608"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="621"/>
         <source>Удача</source>
         <translation>Luck</translation>
     </message>
     <message>
         <location filename="../tab_stats.ui" line="386"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="609"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="622"/>
         <source>Ловкость</source>
         <translation>Dexterity</translation>
     </message>
     <message>
         <location filename="../tab_stats.ui" line="424"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="611"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="624"/>
         <source>Сила</source>
         <translation>Strength</translation>
     </message>
     <message>
         <location filename="../tab_stats.ui" line="443"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="612"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="625"/>
         <source>Источник</source>
         <translation>Source</translation>
     </message>
     <message>
         <location filename="../tab_stats.ui" line="462"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="613"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="626"/>
         <source>Живучесть</source>
         <translation>Vitality</translation>
     </message>
     <message>
         <location filename="../tab_stats.ui" line="481"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="614"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="627"/>
         <source>Грузоподъемность</source>
         <translation>Equip Load</translation>
     </message>
     <message>
-        <location filename="../tab_stats.ui" line="604"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="622"/>
+        <location filename="../tab_stats.ui" line="607"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="628"/>
         <source>Реликвии</source>
         <translation>Relics</translation>
     </message>
     <message>
-        <location filename="../tab_stats.ui" line="622"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="623"/>
+        <location filename="../tab_stats.ui" line="625"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="629"/>
         <source>Вспомненные</source>
         <translation>Remembered</translation>
     </message>
     <message>
-        <location filename="../tab_stats.ui" line="635"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="624"/>
+        <location filename="../tab_stats.ui" line="638"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="630"/>
         <source>Бремя снято</source>
         <translation>Unburdened</translation>
     </message>
     <message>
-        <location filename="../tab_stats.ui" line="648"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="625"/>
+        <location filename="../tab_stats.ui" line="651"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="631"/>
         <source>Угасшие</source>
         <translation>Faded</translation>
     </message>
     <message>
-        <location filename="../tab_stats.ui" line="765"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="631"/>
+        <location filename="../tab_stats.ui" line="771"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="633"/>
         <source>Если активировано, то нужно оформить всего один бэкстэб для достижения</source>
         <translation>If activated, you will need to backstab once to get the achievment</translation>
     </message>
     <message>
-        <location filename="../tab_stats.ui" line="778"/>
-        <location filename="../tab_stats.ui" line="791"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="634"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="637"/>
+        <location filename="../tab_stats.ui" line="784"/>
+        <location filename="../tab_stats.ui" line="797"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="636"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="639"/>
         <source>Если активировано, то нужно оформить всего один репост для достижения</source>
         <translation>If activated, you will need to repost once to get the achievment</translation>
     </message>
     <message>
-        <location filename="../tab_stats.ui" line="811"/>
-        <location filename="../tab_stats.ui" line="837"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="640"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="646"/>
+        <location filename="../tab_stats.ui" line="817"/>
+        <location filename="../tab_stats.ui" line="843"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="642"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="648"/>
         <source>Создает иллюзию, что все предметы вспомнены, для достижения</source>
         <translation>Creates the illusion of remembering all of the items to get the achievement</translation>
     </message>
     <message>
-        <location filename="../tab_stats.ui" line="824"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="643"/>
+        <location filename="../tab_stats.ui" line="830"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="645"/>
         <source>Создает иллюзию, что у всех предметов снято бремя, для достижения</source>
         <translation>Creates the illusion of unburdening all of the items to get the achievement</translation>
     </message>
     <message>
-        <location filename="../tab_stats.ui" line="857"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="649"/>
+        <location filename="../tab_stats.ui" line="863"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="651"/>
         <source>Добавляет всю броню</source>
         <translation>Adds all armor</translation>
     </message>
     <message>
-        <location filename="../tab_stats.ui" line="873"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="652"/>
+        <location filename="../tab_stats.ui" line="879"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="654"/>
         <source>Добавляет все оружие</source>
         <translation>Adds all weapon</translation>
     </message>
     <message>
-        <location filename="../tab_stats.ui" line="886"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="655"/>
+        <location filename="../tab_stats.ui" line="892"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="657"/>
         <source>Добавляет всю магию</source>
         <translation>Adds all spells</translation>
     </message>
     <message>
-        <location filename="../tab_stats.ui" line="899"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="658"/>
+        <location filename="../tab_stats.ui" line="905"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="660"/>
         <source>Добавляет все руны</source>
         <translation>Adds all runes</translation>
     </message>
     <message>
-        <location filename="../tab_stats.ui" line="919"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="661"/>
+        <location filename="../tab_stats.ui" line="925"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="663"/>
         <source>Сбрасывает все квесты. Позволяет проходить квесты не переходя в новую игру</source>
         <translation>Resets all quests. Allows you to complete quests without NG+</translation>
     </message>
     <message>
-        <location filename="../tab_stats.ui" line="932"/>
-        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="664"/>
+        <location filename="../tab_stats.ui" line="938"/>
+        <location filename="../build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/TLHoN_SE_autogen/include/ui_tab_stats.h" line="666"/>
         <source>Вам никто не помогал в убийстве боссов ;)</source>
         <translation>No one helped you kill the bosses ;)</translation>
     </message>

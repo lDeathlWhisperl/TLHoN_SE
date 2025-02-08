@@ -14,8 +14,6 @@ Tab_About::Tab_About(QWidget *parent)
     ui->setupUi(this);
     setStyleFromFile(this, ":/Resources/StyleSheets/Tab_About.qss");
 
-    ui->label->setAlignment(Qt::AlignJustify);
-
     connect(ui->btn_github, &QPushButton::clicked, []()
             {
                 QUrl url("https://github.com/lDeathlWhisperl");

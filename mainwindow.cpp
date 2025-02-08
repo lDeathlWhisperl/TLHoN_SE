@@ -57,7 +57,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->vl_settings_layout->addWidget(tab_settings);
     ui->vl_about_layout->addWidget(tab_about);
 
-    tab_settings->initLanguage();
+    tab_settings->restoreSettings();
 }
 
 void MainWindow::onTabButtonClicked(QPushButton *button, QLabel *label, int tabIndex)

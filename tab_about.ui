@@ -18,6 +18,16 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_4">
    <item>
+    <widget class="QLabel" name="l_version">
+     <property name="text">
+      <string notr="true">[BETA_1]</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QLabel" name="label">
      <property name="maximumSize">
       <size>
@@ -30,6 +40,9 @@
      </property>
      <property name="text">
       <string>Привет! Благодарю тебя за использование моей программы. Надеюсь, она принесет только положительный опыт. Данный проект не ставит своей целью навредить пользователю или автору оригинальной игры. Настоятельно рекомендую создать резервную копию файла сохранения, чтобы избежать возможных проблем. Оставляйте свои отзывы и предложения в комментариях к руководству в Steam. Если вы наткнулись на неисправность, пожалуйста, нажмите на кнопку внизу этой вкладки.</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
