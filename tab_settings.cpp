@@ -3,10 +3,12 @@
 
 #include "jsonparser.h"
 #include "stylefromfile.h"
+#include "positiveintvalidator.h"
 
 #include <QFile>
 #include <QProcessEnvironment>
 #include <QSettings>
+#include <QTimer>
 
 int Tab_Settings::characterId;
 QString Tab_Settings::language = "en";
@@ -17,6 +19,9 @@ Tab_Settings::Tab_Settings(QWidget *parent)
 {
     ui->setupUi(this);
 
+    validator = new PositiveIntValidator;
+    ui->le_maxIconUses->setValidator(validator);
+
     setStyleFromFile(this, ":/Resources/StyleSheets/Tab_Settings.qss");
     loadGameSaves();
 }
@@ -24,8 +29,8 @@ Tab_Settings::Tab_Settings(QWidget *parent)
 void Tab_Settings::loadGameSaves()
 {
     ui->cb_saves->clear();
-    auto& json = JsonParser::getJson();
-    for(const auto& obj : JsonParser::getJson())
+    auto& json = JsonParser::getCharacterJson();
+    for(const auto& obj : JsonParser::getCharacterJson())
         ui->cb_saves->addItem(" " + obj["name"].toString());
 }
 
@@ -34,7 +39,7 @@ int Tab_Settings::getCharacterId()
     return characterId;
 }
 
-void Tab_Settings::initLanguage()
+void Tab_Settings::restoreSettings()
 {
     int language_index = loadSettings("language").toInt();
     //Load language
@@ -44,16 +49,19 @@ void Tab_Settings::initLanguage()
     ui->cb_language->blockSignals(true);
     ui->cb_language->setCurrentIndex(language_index);
     ui->cb_language->blockSignals(false);
+
+    ui->cb_cheater->setChecked(loadSettings("Cheat mode").toInt());
 }
 
 Tab_Settings::~Tab_Settings()
 {
     delete ui;
+    delete validator;
 }
 
 void Tab_Settings::on_cb_saves_currentIndexChanged(int index)
 {
-    auto& json = JsonParser::getJson();
+    auto& json = JsonParser::getCharacterJson();
 
     if(index < 0) index = 0;
     characterId = index;
@@ -80,18 +88,21 @@ void Tab_Settings::on_btn_restore_clicked()
     loadGameSaves();
 
     emit saveRestored();
+    const auto& style = ui->btn_restore->styleSheet();
+    ui->btn_restore->setStyleSheet("background-color: #0f0;");
+    QTimer::singleShot(500, this, [this, &style](){ ui->btn_restore->setStyleSheet(style); });
 }
 
 void Tab_Settings::on_cb_cheater_toggled(bool checked)
 {
     qInfo() << "Cheat mode: " << checked;
-    //Look at "bossFightAssistances"
+    saveSettings("Cheat mode", QString::number(checked));
     emit modeToggled(checked);
 }
 
 void Tab_Settings::on_le_maxIconUses_editingFinished()
 {
-    auto& json = JsonParser::getJson();
+    auto& json = JsonParser::getCharacterJson();
 
     int max = ui->le_maxIconUses->text().toInt();
     if(max < 1)

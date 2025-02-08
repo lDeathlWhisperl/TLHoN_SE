@@ -15,7 +15,7 @@ class Tab_Settings : public QWidget
 public:
     explicit Tab_Settings(QWidget *parent = nullptr);
     static int getCharacterId();
-    void initLanguage();
+    void restoreSettings();
     ~Tab_Settings();
 
 private:
@@ -41,6 +41,7 @@ private:
     QTranslator translator;
     static QString language;
     static int characterId;
+    class PositiveIntValidator* validator;
 };
 
 #endif // TAB_SETTINGS_H
