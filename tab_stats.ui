@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>531</width>
-    <height>514</height>
+    <width>740</width>
+    <height>494</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -65,7 +65,7 @@
             <string/>
            </property>
            <property name="text">
-            <string/>
+            <string notr="true"/>
            </property>
            <property name="alignment">
             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
@@ -118,7 +118,7 @@
          <item row="1" column="1">
           <widget class="QLabel" name="l_class">
            <property name="text">
-            <string/>
+            <string notr="true"/>
            </property>
            <property name="alignment">
             <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -135,7 +135,7 @@
          <item row="4" column="1">
           <widget class="QLabel" name="l_stamina">
            <property name="text">
-            <string/>
+            <string notr="true"/>
            </property>
            <property name="alignment">
             <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -145,7 +145,7 @@
          <item row="3" column="1">
           <widget class="QLabel" name="l_health">
            <property name="text">
-            <string/>
+            <string notr="true"/>
            </property>
            <property name="alignment">
             <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -155,7 +155,7 @@
          <item row="2" column="1">
           <widget class="QLabel" name="l_level">
            <property name="text">
-            <string/>
+            <string notr="true"/>
            </property>
            <property name="alignment">
             <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -229,7 +229,7 @@
               </size>
              </property>
              <property name="text">
-              <string/>
+              <string notr="true"/>
              </property>
              <property name="alignment">
               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
@@ -270,7 +270,7 @@
               </size>
              </property>
              <property name="text">
-              <string/>
+              <string notr="true"/>
              </property>
              <property name="alignment">
               <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
@@ -348,7 +348,7 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_6">
          <item>
-          <layout class="QGridLayout" name="gridLayout_6">
+          <layout class="QGridLayout" name="gl_stats">
            <item row="6" column="0">
             <widget class="QLabel" name="label_15">
              <property name="minimumSize">
@@ -490,8 +490,11 @@
                <height>16777215</height>
               </size>
              </property>
+             <property name="inputMethodHints">
+              <set>Qt::InputMethodHint::ImhNone</set>
+             </property>
              <property name="text">
-              <string/>
+              <string notr="true"/>
              </property>
              <property name="alignment">
               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -507,7 +510,7 @@
               </size>
              </property>
              <property name="text">
-              <string/>
+              <string notr="true"/>
              </property>
              <property name="alignment">
               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -523,7 +526,7 @@
               </size>
              </property>
              <property name="text">
-              <string/>
+              <string notr="true"/>
              </property>
              <property name="alignment">
               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -539,7 +542,7 @@
               </size>
              </property>
              <property name="text">
-              <string/>
+              <string notr="true"/>
              </property>
              <property name="alignment">
               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -555,7 +558,7 @@
               </size>
              </property>
              <property name="text">
-              <string/>
+              <string notr="true"/>
              </property>
              <property name="alignment">
               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -571,7 +574,7 @@
               </size>
              </property>
              <property name="text">
-              <string/>
+              <string notr="true"/>
              </property>
              <property name="alignment">
               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -587,7 +590,7 @@
               </size>
              </property>
              <property name="text">
-              <string/>
+              <string notr="true"/>
              </property>
              <property name="alignment">
               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -647,6 +650,9 @@
                <property name="text">
                 <string>Угасшие</string>
                </property>
+               <property name="textFormat">
+                <enum>Qt::TextFormat::AutoText</enum>
+               </property>
               </widget>
              </item>
              <item row="3" column="0">
@@ -671,7 +677,7 @@
                 </size>
                </property>
                <property name="text">
-                <string/>
+                <string notr="true"/>
                </property>
                <property name="alignment">
                 <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -687,7 +693,7 @@
                 </size>
                </property>
                <property name="text">
-                <string/>
+                <string notr="true"/>
                </property>
                <property name="alignment">
                 <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -703,7 +709,7 @@
                 </size>
                </property>
                <property name="text">
-                <string/>
+                <string notr="true"/>
                </property>
                <property name="alignment">
                 <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -719,7 +725,7 @@
                 </size>
                </property>
                <property name="text">
-                <string/>
+                <string notr="true"/>
                </property>
                <property name="alignment">
                 <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>

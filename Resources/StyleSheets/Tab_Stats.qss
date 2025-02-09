@@ -66,13 +66,13 @@ QCheckBox
 QCheckBox::indicator
 {
 	background: #000;
-	border: 5px solid #fff;
-	width: 32;
-	height: 32;
+	border: 3px solid #fff;
+	width: 25;
+	height: 25;
 }
 QCheckBox::indicator::hover
 {
-	border: 5px solid rgb(228, 221, 9);
+	border-color: rgb(228, 221, 9);
 }
 QCheckBox::indicator::checked
 {
@@ -82,7 +82,7 @@ QCheckBox::indicator::checked
 QCheckBox::indicator#cb_all_weapon,
 QCheckBox::indicator#cb_all_armor
 {
-	border: 5px solid rgb(80, 80, 80);
+	border-color: rgb(80, 80, 80);
 }
 QCheckBox#cb_all_weapon,
 QCheckBox#cb_all_armor

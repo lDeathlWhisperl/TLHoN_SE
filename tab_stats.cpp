@@ -2,8 +2,10 @@
 #include "ui_tab_stats.h"
 #include "stylefromfile.h"
 
-#include "jsonparser.h"
 #include "tab_settings.h"
+#include "positiveintvalidator.h"
+
+#include <QMessageBox>
 
 enum
 {
@@ -72,6 +74,13 @@ Tab_Stats::Tab_Stats(QWidget *parent) :
 
     setStyleFromFile(this, ":/Resources/StyleSheets/Tab_Stats.qss");
 
+    validator = new PositiveIntValidator;
+
+    ui->le_memory->setValidator(validator);
+
+    for(int i = 0; i < ui->gl_stats->rowCount(); ++i)
+        static_cast<QLineEdit*>(ui->gl_stats->itemAtPosition(i, 1)->widget())->setValidator(validator);
+
     connect(ui->le_memory,          &QLineEdit::editingFinished, [this]() { le_textChanged("memory",           ui->le_memory->text());          });
     connect(ui->le_stat_vitality,   &QLineEdit::editingFinished, [this]() { le_textChanged("_stat_vitality",   ui->le_stat_vitality->text());   });
     connect(ui->le_stat_stamina,    &QLineEdit::editingFinished, [this]() { le_textChanged("_stat_stamina",    ui->le_stat_stamina->text());    });
@@ -87,6 +96,8 @@ Tab_Stats::Tab_Stats(QWidget *parent) :
     connect(ui->cb_remembered, &QCheckBox::toggled, [this](bool) { setCheat("itemsRemembered",    75); });
     connect(ui->cb_unburdened, &QCheckBox::toggled, [this](bool) { setCheat("itemsHoovered",      71); });
     connect(ui->cb_DLC,        &QCheckBox::toggled, [this](bool) { setCheat("DLCItemsRemembered", 10); });
+
+    connect(ui->cb_help,       &QCheckBox::toggled, [this](bool) { setCheat("bossFightAssistances", 0, JsonParser::getInfoJson()); });
 
     const QList<QString> spells =
         {
@@ -208,8 +219,13 @@ Tab_Stats::Tab_Stats(QWidget *parent) :
 
     connect(ui->cb_all_spell, &QCheckBox::toggled, [this, spells](bool) { all_item_cheat(ui->cb_all_spell, spells, "(Spell|FadedSkuriken)"); });
     connect(ui->cb_all_rune,  &QCheckBox::toggled, [this, runes ](bool) { all_item_cheat(ui->cb_all_rune,  runes,  "Relic_"); });
-    //TODO: FIND ALL ARMOR
+    //TODO: FIND ALL ARMOR AND WEAPON
     // connect(ui->cb_all_armor, &QCheckBox::toggled, [this, armor ](bool) { all_item_cheat(ui->cb_all_armor, armor,  "(Helm|Torso|Legs|Arms|TopHat)"); });
+
+    //TEMP
+    ui->cb_all_weapon->setEnabled(false);
+    ui->cb_all_armor->setEnabled(false);
+    //
 
     ui->btn_cheat->setVisible(false);
     ui->line_3->setVisible(false);
@@ -235,18 +251,17 @@ void Tab_Stats::le_textChanged(QString param, QString text)
     qInfo() << param << " = " << text;
     if(isBlockSignal) return;
 
-    auto& json = JsonParser::getJson();
+    auto& json = JsonParser::getCharacterJson();
     json[id][param] = text.toInt();
 
     JsonParser::write();
 }
 
-void Tab_Stats::setCheat(QString param, int value)
+void Tab_Stats::setCheat(QString param, int value, QList<QJsonObject> &json)
 {
     qInfo() << param << " = " << value;
     if(isBlockSignal) return;
 
-    auto& json = JsonParser::getJson();
     json[id][param] = value;
 
     JsonParser::write();
@@ -257,7 +272,7 @@ void Tab_Stats::setCheat(QString param, int value)
 void Tab_Stats::update()
 {
     id = Tab_Settings::getCharacterId();
-    auto& json = JsonParser::getJson();
+    auto& json = JsonParser::getCharacterJson();
 
     isBlockSignal = true;
 
@@ -284,12 +299,12 @@ void Tab_Stats::update()
     ui->l_unburdened->setText(QString::number(json[id]["itemsHoovered"].toInt()));
     ui->l_DLC->setText(QString::number(json[id]["DLCItemsRemembered"].toInt()));
 
-    disableIfCompleted(ui->cb_backstabs,   json[id]["backstabCount"].toInt(),      20);
-    disableIfCompleted(ui->cb_repostes,    json[id]["reposteCount"].toInt(),       20);
-    disableIfCompleted(ui->cb_rebuffs,     json[id]["rebuffCount"].toInt(),        20);
-    disableIfCompleted(ui->cb_remembered,  json[id]["itemsRemembered"].toInt(),    75);
-    disableIfCompleted(ui->cb_unburdened,  json[id]["itemsHoovered"].toInt(),      71);
-    disableIfCompleted(ui->cb_DLC,         json[id]["DLCItemsRemembered"].toInt(), 10);
+    disableIfCompleted(ui->cb_backstabs,   json[id]["backstabCount"].toInt(),        20);
+    disableIfCompleted(ui->cb_repostes,    json[id]["reposteCount"].toInt(),         20);
+    disableIfCompleted(ui->cb_rebuffs,     json[id]["rebuffCount"].toInt(),          20);
+    disableIfCompleted(ui->cb_remembered,  json[id]["itemsRemembered"].toInt(),      75);
+    disableIfCompleted(ui->cb_unburdened,  json[id]["itemsHoovered"].toInt(),        71);
+    disableIfCompleted(ui->cb_DLC,         json[id]["DLCItemsRemembered"].toInt(),   10);
 
     isBlockSignal = false;
 }
@@ -297,10 +312,12 @@ void Tab_Stats::update()
 Tab_Stats::~Tab_Stats()
 {
     delete ui;
+    delete validator;
 }
 
 void Tab_Stats::on_btn_cheat_toggled(bool checked)
 {
+    // qInfo() << this->size();
     if(checked) ui->btn_cheat->setText("<--");
     else ui->btn_cheat->setText("-->");
     ui->line_3->setVisible(checked);
@@ -308,16 +325,12 @@ void Tab_Stats::on_btn_cheat_toggled(bool checked)
     for(int i = 0; i < ui->vl_cheat_layout->count(); ++i)
         if(auto w = ui->vl_cheat_layout->itemAt(i)->widget(); w)
             w->setVisible(checked);
-
-    //TEMP
-    ui->cb_all_weapon->setHidden(true);
-    //
 }
 
 void Tab_Stats::all_item_cheat(QCheckBox* cb, const QList<QString>& items, const QString& regex)
 {
     qInfo() << "regex: " << regex;
-    auto& json = JsonParser::getJson();
+    auto& json = JsonParser::getCharacterJson();
     QJsonArray inventory = json[id]["inventory"].toArray();
     QList<QString> copy = items;
 
@@ -325,11 +338,14 @@ void Tab_Stats::all_item_cheat(QCheckBox* cb, const QList<QString>& items, const
         if(const auto& item = inventory[i].toObject()["GUID"].toString(); item.contains(QRegularExpression(regex)))
             copy.removeOne(item);
 
+    qInfo() << "items: " << copy;
+
     if(copy.empty())
     {
         cb->blockSignals(true);
         cb->setChecked(true);
         cb->blockSignals(false);
+        QMessageBox::information(nullptr, QObject::tr("Ты пытался..."), QObject::tr("У вас уже есть эти предметы."));
         qDebug() << "You already have it all";
         return;
     }
@@ -340,3 +356,24 @@ void Tab_Stats::all_item_cheat(QCheckBox* cb, const QList<QString>& items, const
     json[id]["inventory"] = inventory;
     JsonParser::write();
 }
+
+void Tab_Stats::on_cb_restore_quests_toggled(bool)
+{
+    qInfo() << "Restoring quests";
+    auto& quests = JsonParser::getQuestJson();
+
+    quests[id]["questStage_BrendenMerkle"] = 10;
+    quests[id]["questStage_ChainedHero"]   = 10;
+    quests[id]["questStage_Heir"]          = 10;
+    quests[id]["questStage_Hoover"]        = 10;
+    quests[id]["questStage_Innocent"]      = 10;
+    quests[id]["questStage_Maiden"]        = 10;
+    quests[id]["questStage_Nameless"]      = 10;
+    quests[id]["questStage_Sando"]         = 10;
+    quests[id]["questStage_Sco"]           = 10;
+    quests[id]["questStage_Shopkeeper"]    = 10;
+    quests[id]["questStage_TheSmith"]      = 10;
+
+    JsonParser::write();
+}
+
