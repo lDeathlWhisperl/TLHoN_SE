@@ -29,9 +29,9 @@ Tab_About::Tab_About(QWidget *parent)
                 QUrl url("https://github.com/lDeathlWhisperl/TLHoN_IC/issues");
                 QDesktopServices::openUrl(url);
             });
-    connect(ui->btn_game, &QPushButton::clicked, []()
+    connect(ui->btn_guide, &QPushButton::clicked, []()
             {
-                QUrl url("https://store.steampowered.com/app/1766100/The_Last_Hero_of_Nostalgaia/");
+                QUrl url(QObject::tr("https://steamcommunity.com/sharedfiles/filedetails/?id=3421728450"));
                 QDesktopServices::openUrl(url);
             });
 }

@@ -34,8 +34,7 @@ void JsonParser::init()
 
     QRegularExpression re("~[A-z]*~");
     QList data = st.split(re);
-    misc = {data[0]};
-    data.pop_front();
+    misc = {data.takeFirst()};
 
     try
     {
@@ -130,5 +129,12 @@ void JsonParser::write()
 void JsonParser::clear()
 {
     characterJson.clear();
+    infoJson.clear();
+    questJson.clear();
     misc.clear();
+
+    characterJson.shrink_to_fit();
+    infoJson.shrink_to_fit();
+    questJson.shrink_to_fit();
+    misc.shrink_to_fit();
 }
